@@ -1,38 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="app.css    " />
-  </head>
-  <body>
-    <div id="screen">
-      <div id="game">
-        <div id="game_background"></div>
-        <div id="game_elements">
-          <div id="bandit_container">
-            <img id="bandit" src="" alt="" />
-          </div>
-          <div id="civil_container">
-            <img id="civil" src="" alt="" />
-          </div>
-          <div id="bonusItem_container">
-            <img id="bonusIt" src="" alt="" />
-          </div>
+<html lang="da">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BulletMind</title>
+  <link rel="stylesheet" href="animation.css" />
+</head>
+
+<body>
+  <div id="screen">
+    <div id="game">
+      <div id="game_background"></div>
+      <div id="game_elements">
+        <div id="bandit1_container">
+          <img id="bandit1_sprite" src="" alt="">
         </div>
-        <div id="game_forground"></div>
-        <div id="game_ui">
-          <div id="score_board"></div>
-          <div id="life_board"></div>
-          <div id="time_board"></div>
+        <div id="bandit2_container">
+          <img id="bandit2_sprite" src="" alt="">
+        </div>
+        <div id="civil_container">
+          <img id="civil_sprite" src="" alt="">
         </div>
       </div>
-      <div id="start"></div>
-      <div id="game_over"></div>
-      <div id="level_complete"></div>
+      <div id="game_foreground"></div>
+      <div id="game_ui">
+        <img id="time_board" src="svg/ui_time.svg">
+        <img id="score_board" src="svg/ui_points.svg">
+        <img id="life_board" src="svg/ui_life.svg">
+      </div>
     </div>
-  </body>
-  <script src="app.js"></script>
+    <div id="start"></div>
+    <div id="game_over"></div>
+    <div id="level_complete"></div>
+  </div>
+</body>
+<script src="app.js"></script>
+
 </html>
