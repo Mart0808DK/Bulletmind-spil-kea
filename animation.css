@@ -26,7 +26,7 @@ img {
 
 #game_background {
   grid-area: 1 / 1;
-  background-image: url(/images/Western\ Saloon\ background.jpg);
+  background-image: url(/images/Background\ night.jpg);
   background-size: cover;
 }
 #game_elements {
