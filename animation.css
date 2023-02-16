@@ -78,7 +78,7 @@ img {
     transform: translate(-100%, 0);
   }
   100% {
-    transform: translate(60%,50%);
+    transform: translate(60%, 50%);
   }
 }
 
@@ -87,6 +87,22 @@ img {
   position: absolute;
   top: 20%;
   left: -3%;
+}
+
+.band3 {
+  animation-name: B3;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes B3 {
+  0% {
+    transform: translate(-100%, 0);
+  }
+  100% {
+    transform: translate(100%, -5%);
+  }
 }
 
 #civil_container {
