@@ -44,12 +44,42 @@ img {
   top: 18%;
   left: 37%;
 }
+.band1 {
+  animation-name: B1;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
 
+@keyframes B1 {
+  0% {
+    transform: translate(-100%, 0%);
+  }
+  100% {
+    transform: translate(100%, 0%);
+  }
+}
 #bandit2_container {
   width: 60%;
   position: absolute;
   top: 15%;
   left: 10;
+}
+
+.band2 {
+  animation-name: B2;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes B2 {
+  0% {
+    transform: translate(-100%, 0);
+  }
+  100% {
+    transform: translate(60%,50%);
+  }
 }
 
 #bandit3_container {
