@@ -1,41 +1,50 @@
 <!DOCTYPE html>
 <html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BulletMind</title>
+    <link rel="stylesheet" href="animation.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BulletMind</title>
-  <link rel="stylesheet" href="animation.css" />
-</head>
-
-<body>
-  <div id="screen">
-    <div id="game">
-      <div id="game_background"></div>
-      <div id="game_elements">
-        <div id="bandit1_container">
-          <img id="bandit1_sprite" src="" alt="">
+  <body>
+    <div id="screen">
+      <div id="game">
+        <div id="game_background"></div>
+        <div id="game_elements">
+          <div id="bandit1_container">
+            <img id="bandit1_sprite" src="/images/Bandit1.png" alt="" />
+          </div>
+          <div id="bandit2_container">
+            <img id="bandit2_sprite" src="/images/Bandit2.png" alt="" />
+          </div>
+          <div id="bandit3_container">
+            <img id="bandit3_sprite" src="/images/Bandit3png.png" alt="" />
+          </div>
+          <div id="civil_container">
+            <img id="civil_sprite" src="/images/Civil1.png" alt="" />
+          </div>
+          <div id="civil_container2">
+            <img id="civil_sprite2" src="/images/Civil.png" alt="" />
+          </div>
+          <div id="civil_container3">
+            <img id="civil_sprite3" src="/images/Civil 4 png.png" alt="" />
+          </div>
         </div>
-        <div id="bandit2_container">
-          <img id="bandit2_sprite" src="" alt="">
-        </div>
-        <div id="civil_container">
-          <img id="civil_sprite" src="" alt="">
+        <div id="game_foreground"></div>
+        <div id="game_ui">
+          <img id="time_board" src="svg/ui_time.svg" />
+          <img id="score_board" src="/images/scoreboard 2.png" />
+          <img id="life_board" src="/images/heart.png" />
+          <img id="life_board2" src="/images/heart.png" />
+          <img id="life_board3" src="/images/heart.png" />
         </div>
       </div>
-      <div id="game_foreground"></div>
-      <div id="game_ui">
-        <img id="time_board" src="svg/ui_time.svg">
-        <img id="score_board" src="svg/ui_points.svg">
-        <img id="life_board" src="svg/ui_life.svg">
-      </div>
+      <div id="start"></div>
+      <div id="game_over"></div>
+      <div id="level_complete"></div>
     </div>
-    <div id="start"></div>
-    <div id="game_over"></div>
-    <div id="level_complete"></div>
-  </div>
-</body>
-<script src="app.js"></script>
-
+  </body>
+  <script src="app.js"></script>
 </html>
