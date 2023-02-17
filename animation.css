@@ -27,7 +27,7 @@ img {
 
 #game_background {
   grid-area: 1 / 1;
-  background-image: url(https://www.simpleimageresizer.com/_uploads/photos/d2619dc9/Background_night_1_1280x720.jpg);
+  background-image: url(/images/Background_night_1280x720.jpg);
   background-size: cover;
   aspect-ratio: 16/9;
   width: 100%;
@@ -108,8 +108,24 @@ img {
 #civil_container {
   width: 17%;
   position: absolute;
-  top: 44%;
-  left: 48%;
+  top: 50%;
+  left: -2%;
+}
+
+.civil1 {
+  animation-name: C1;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes C1 {
+  0% {
+    transform: translate(-12,-20);
+  }
+  100% {
+    transform: translate(20%, -20%);
+  }
 }
 
 #civil_container2 {
@@ -119,11 +135,43 @@ img {
   left: -20%;
 }
 
+.civil2 {
+  animation-name: C2;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes C2 {
+  0%  {
+    transform: translate(-100,0);
+  }
+  100% {
+    transform: translate(100%, 0);
+  }
+}
+
 #civil_container3 {
-  width: 150%;
+  width: 130%;
   position: absolute;
   top: 10%;
   left: 1%;
+}
+
+.civil3 {
+  animation-name: C3;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes C3 {
+  0% {
+    transform: translate(0,0);
+  }
+  100% {
+    transform: translate(-100%, -60%);
+  }
 }
 #game_ui {
   grid-area: 1 / 1;
