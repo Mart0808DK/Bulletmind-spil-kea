@@ -32,6 +32,95 @@ img {
   aspect-ratio: 16/9;
   width: 100%;
 }
+.star1 {
+  background-image: url(/images/Game\ start2.jpg);
+  background-size: cover;
+  aspect-ratio: 16/9;
+  width: 100%;
+  animation-name: S1;
+  animation-duration: 50s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes S1 {
+  0% {
+    transform: scale(9);
+  }
+  1% {
+    transform: scale(7);
+  }
+  2% {
+    transform: scale(5);
+  }
+  3% {
+    transform: scale(3);
+  }
+  4% {
+    transform: scale(1);
+  }
+}
+
+.gameO {
+  background-image: url(/images/Game\ over\ .jpg);
+  background-size: cover;
+  aspect-ratio: 16/9;
+  width: 100%;
+  animation-name: GO1;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-delay: 10s;
+}
+
+@keyframes GO1 {
+  0% {
+    transform: scale(2);
+  }
+  25% {
+    transform: scale(4);
+  }
+  50% {
+    transform: scale(6);
+  }
+  75% {
+    transform: scale(8);
+  }
+  100% {
+    transform: scale(10);
+  }
+}
+
+.LevelC {
+  background-image: url(/images/Level-complete.jpg);
+  background-size: cover;
+  aspect-ratio: 16/9;
+  width: 100%;
+  animation-name: LC1;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-delay: 15s;
+}
+
+@keyframes LC1 {
+  0% {
+    transform: scale(2);
+  }
+  25% {
+    transform: scale(4);
+  }
+  50% {
+    transform: scale(6);
+  }
+  75% {
+    transform: scale(8);
+  }
+  100% {
+    transform: scale(10);
+  }
+}
+
 #game_elements {
   grid-area: 1 / 1;
   position: relative;
@@ -121,7 +210,7 @@ img {
 
 @keyframes C1 {
   0% {
-    transform: translate(-12,-20);
+    transform: translate(-12, -20);
   }
   100% {
     transform: translate(20%, -20%);
@@ -143,8 +232,8 @@ img {
 }
 
 @keyframes C2 {
-  0%  {
-    transform: translate(-100,0);
+  0% {
+    transform: translate(-100, 0);
   }
   100% {
     transform: translate(100%, 0);
@@ -167,7 +256,7 @@ img {
 
 @keyframes C3 {
   0% {
-    transform: translate(0,0);
+    transform: translate(0, 0);
   }
   100% {
     transform: translate(-100%, -60%);
