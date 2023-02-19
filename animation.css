@@ -252,6 +252,7 @@ img {
   animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  animation-play-state: paused;
 }
 
 @keyframes C3 {
@@ -262,6 +263,33 @@ img {
     transform: translate(-100%, -60%);
   }
 }
+
+.gElement {
+  animation-name: Zoom_out;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-delay: 10s;
+  animation-timing-function: 1;
+}
+
+@keyframes Zoom_out {
+  0% {
+    transform: scale(9);
+  }
+  1% {
+    transform: scale(7);
+  }
+  2% {
+    transform: scale(5);
+  }
+  3% {
+    transform: scale(3);
+  }
+  4% {
+    transform: scale(1);
+  }
+}
+
 #game_ui {
   grid-area: 1 / 1;
   position: relative;
