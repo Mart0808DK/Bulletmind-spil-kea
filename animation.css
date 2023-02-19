@@ -33,28 +33,28 @@ img {
   width: 100%;
 }
 .star1 {
-  background-image: url(/images/Game\ start2.jpg);
+  background-image: url(/images/Game_start3_1280x720.jpg);
   background-size: cover;
   aspect-ratio: 16/9;
   width: 100%;
   animation-name: S1;
-  animation-duration: 50s;
+  animation-duration: 90s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
 }
 
 @keyframes S1 {
   0% {
-    transform: scale(9);
-  }
-  1% {
-    transform: scale(7);
-  }
-  2% {
     transform: scale(5);
   }
-  3% {
+  1% {
+    transform: scale(4);
+  }
+  2% {
     transform: scale(3);
+  }
+  3% {
+    transform: scale(2);
   }
   4% {
     transform: scale(1);
@@ -62,7 +62,7 @@ img {
 }
 
 .gameO {
-  background-image: url(/images/Game\ over\ .jpg);
+  background-image: url(/images/Game_over2__1280x720.jpg);
   background-size: cover;
   aspect-ratio: 16/9;
   width: 100%;
@@ -92,7 +92,7 @@ img {
 }
 
 .LevelC {
-  background-image: url(/images/Level-complete.jpg);
+  background-image: url(/images/Level-complete2_1280x720.jpg);
   background-size: cover;
   aspect-ratio: 16/9;
   width: 100%;
@@ -105,16 +105,16 @@ img {
 
 @keyframes LC1 {
   0% {
-    transform: scale(2);
+    transform: scale(1);
   }
   25% {
-    transform: scale(4);
+    transform: scale(3);
   }
   50% {
-    transform: scale(6);
+    transform: scale(5);
   }
   75% {
-    transform: scale(8);
+    transform: scale(7);
   }
   100% {
     transform: scale(10);
@@ -274,19 +274,10 @@ img {
 
 @keyframes Zoom_out {
   0% {
-    transform: scale(9);
+    transform: scale(1);
   }
   1% {
-    transform: scale(7);
-  }
-  2% {
-    transform: scale(5);
-  }
-  3% {
-    transform: scale(3);
-  }
-  4% {
-    transform: scale(1);
+    transform: scale(0);
   }
 }
 
