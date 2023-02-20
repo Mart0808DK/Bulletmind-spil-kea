@@ -32,13 +32,29 @@ img {
   aspect-ratio: 16/9;
   width: 100%;
 }
+.zoom_out {
+  animation-name: zoomOut;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
 .star1 {
   background-image: url(/images/Game_start3_1280x720.jpg);
   background-size: cover;
   aspect-ratio: 16/9;
   width: 100%;
   animation-name: S1;
-  animation-duration: 90s;
+  animation-duration: 2s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
 }
@@ -47,17 +63,17 @@ img {
   0% {
     transform: scale(5);
   }
-  1% {
+  60% {
     transform: scale(4);
   }
-  2% {
+  70% {
     transform: scale(3);
   }
-  3% {
+  80% {
     transform: scale(2);
   }
-  4% {
-    transform: scale(1);
+  100% {
+    transform: scale(0);
   }
 }
 
@@ -190,10 +206,9 @@ img {
     transform: translate(-100%, 0);
   }
   100% {
-    transform: translate(100%, -5%);
+    transform: translate(100%, 0);
   }
 }
-
 #civil_container {
   width: 17%;
   position: absolute;
@@ -264,23 +279,6 @@ img {
   }
 }
 
-.gElement {
-  animation-name: Zoom_out;
-  animation-duration: 5s;
-  animation-timing-function: linear;
-  animation-delay: 10s;
-  animation-timing-function: 1;
-}
-
-@keyframes Zoom_out {
-  0% {
-    transform: scale(1);
-  }
-  1% {
-    transform: scale(0);
-  }
-}
-
 #game_ui {
   grid-area: 1 / 1;
   position: relative;
@@ -318,4 +316,8 @@ img {
   position: absolute;
   top: 5%;
   left: 10%;
+}
+
+.paused {
+  animation-play-state: paused;
 }
