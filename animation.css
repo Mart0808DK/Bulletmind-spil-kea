@@ -184,7 +184,7 @@ img {
     transform: translate(-50%, 20%);
   }
   100% {
-    transform: translate(1000%, -10%);
+    transform: translate(100%, -10%);
   }
 }
 
@@ -220,6 +220,7 @@ img {
 .civil1 {
   animation-name: C1;
   animation-duration: 1s;
+  animation-delay: 1s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
