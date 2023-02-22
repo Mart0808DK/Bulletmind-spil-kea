@@ -1,5 +1,8 @@
 "use script";
 
+let points = 0;
+let lives = 3;
+
 window.addEventListener("load", start);
 
 function start() {

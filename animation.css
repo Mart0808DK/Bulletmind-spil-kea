@@ -292,14 +292,27 @@ img {
   top: 5%;
   left: 5%;
 }
+
+#score_Board {
+  display: grid;
+  grid-template-columns: 1/1;
+  gap: 0.1em;
+}
+
+#score_count {
+  white-space: nowrap;
+  left: 50%;
+  top: 25%;
+  position: absolute;
+}
+
 #score_image {
   display: grid;
   grid-template-columns: 1fr;
   position: absolute;
-  width: 9%;
-  left: 44%;
-} 
-  
+  width: 5%;
+  left: 48%;
+}
 
 #lives_Ui {
   display: grid;
