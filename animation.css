@@ -287,36 +287,37 @@ img {
 
 /* ui-elementer */
 #time_board {
-  width: 5.6%;
+  display: grid;
+  width: 4%;
   position: absolute;
-  top: 5%;
-  left: 5%;
+  padding-top: 1%;
+  right: 5%;
 }
 
 #score_Board {
   display: grid;
   grid-template-columns: 1/1;
   gap: 0.1em;
+  left: 50%;
 }
+  
 
 #score_count {
-  white-space: nowrap;
-  left: 50%;
-  top: 25%;
+  display: grid;
+  left: 48%;
+  padding-top: 1.5%;
   position: absolute;
+  font-size: 3em;
+  font-family: 'Rye', cursive;
+  color: white;
+  
 }
 
-#score_image {
-  display: grid;
-  grid-template-columns: 1fr;
-  position: absolute;
-  width: 5%;
-  left: 48%;
-}
+
 
 #lives_Ui {
   display: grid;
-  width: 10%;
+  width: 8%;
   position: absolute;
   padding-top: 2%;
   top: 6%;
