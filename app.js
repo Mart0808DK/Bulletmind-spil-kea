@@ -18,7 +18,7 @@ function start() {
 function zoom_Civil1() {
   document
     .querySelector("#civil_container")
-    .removeEventListener("click", start);
+    .removeEventListener("click", zoom_Civil1);
 
   document.querySelector("#civil_container").classList.add("paused");
 
@@ -28,7 +28,7 @@ function zoom_Civil1() {
     .querySelector("#civil_container")
     .addEventListener("animationend", repeatC1);
 
-    decrementPoints();
+  decrementPoints();
 }
 
 function repeatC1() {
@@ -52,7 +52,7 @@ function repeatC1() {
 function zoom_Bandit1() {
   document
     .querySelector("#bandit1_container")
-    .removeEventListener("click", start);
+    .removeEventListener("click", zoom_Bandit1);
 
   document.querySelector("#bandit1_container").classList.add("paused");
 
@@ -62,7 +62,7 @@ function zoom_Bandit1() {
     .querySelector("#bandit1_container")
     .addEventListener("animationend", repeatB1);
 
-    incrementPoints();
+  incrementPoints();
 }
 
 function repeatB1() {
@@ -86,6 +86,9 @@ function repeatB1() {
 function incrementPoints() {
   points = points + 10;
   displayPoints();
+  if (points == 30) {
+    level_Complete1();
+  }
 }
 
 function displayPoints() {
@@ -93,11 +96,25 @@ function displayPoints() {
 }
 
 function decrementPoints() {
+  console.log("hello");
+  if (lives <= 1) {
+    game_Over1();
+  } 
   displayDecrementLives();
   lives--;
 }
 
 function displayDecrementLives() {
-  document.querySelector("#life_board  " + lives).classList.remove("life_B");
+  document.querySelector("#life_board" + lives).classList.remove("life_B");
   document.querySelector("#life_board" + lives).classList.add("broken_heart");
+}
+
+function level_Complete1() {
+  document.querySelector("#game_background").classList.remove("hidden");
+  document.querySelector("#level_complete").classList.remove("hidden");
+}
+
+function game_Over1() {
+  document.querySelector("#game_background").classList.remove("hidden");
+  document.querySelector("#game_over").classList.remove("hidden");
 }

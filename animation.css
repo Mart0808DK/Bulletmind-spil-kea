@@ -49,75 +49,26 @@ img {
   }
 }
 
-.star1 {
-  background-image: url(/images/Game_start3_1280x720.jpg);
-  background-size: cover;
-  aspect-ratio: 16/9;
-  width: 100%;
-  animation-name: S1;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-  animation-iteration-count: 1;
-}
-
-@keyframes S1 {
-  0% {
-    transform: scale(5);
-  }
-  60% {
-    transform: scale(4);
-  }
-  70% {
-    transform: scale(3);
-  }
-  80% {
-    transform: scale(2);
-  }
-  100% {
-    transform: scale(0);
-  }
-}
-
-.gameO {
+#game_over {
+  grid-area: 1/1;
   background-image: url(/images/Game_over2__1280x720.jpg);
   background-size: cover;
   aspect-ratio: 16/9;
   width: 100%;
-  animation-name: GO1;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-  animation-iteration-count: 1;
-  animation-delay: 10s;
 }
 
-@keyframes GO1 {
-  0% {
-    transform: scale(2);
-  }
-  25% {
-    transform: scale(4);
-  }
-  50% {
-    transform: scale(6);
-  }
-  75% {
-    transform: scale(8);
-  }
-  100% {
-    transform: scale(10);
-  }
-}
-
-.LevelC {
+#level_complete {
+  grid-area: 1/1;
   background-image: url(/images/Level-complete2_1280x720.jpg);
   background-size: cover;
   aspect-ratio: 16/9;
   width: 100%;
-  animation-name: LC1;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-  animation-iteration-count: 1;
-  animation-delay: 15s;
+}
+
+
+.hidden,
+#game_over.hidden,#level_complete.hidden {
+  display: none;
 }
 
 @keyframes LC1 {
