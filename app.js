@@ -27,6 +27,8 @@ function zoom_Civil1() {
   document
     .querySelector("#civil_container")
     .addEventListener("animationend", repeatC1);
+
+    decrementPoints();
 }
 
 function repeatC1() {
@@ -88,4 +90,14 @@ function incrementPoints() {
 
 function displayPoints() {
   document.querySelector("#score_count").textContent = points;
+}
+
+function decrementPoints() {
+  displayDecrementLives();
+  lives--;
+}
+
+function displayDecrementLives() {
+  document.querySelector("#life_board  " + lives).classList.remove("life_B");
+  document.querySelector("#life_board" + lives).classList.add("broken_heart");
 }
