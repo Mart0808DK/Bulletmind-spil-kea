@@ -59,6 +59,8 @@ function zoom_Bandit1() {
   document
     .querySelector("#bandit1_container")
     .addEventListener("animationend", repeatB1);
+
+    incrementPoints();
 }
 
 function repeatB1() {
@@ -77,4 +79,13 @@ function repeatB1() {
   document
     .querySelector("#bandit1_container")
     .addEventListener("click", zoom_Bandit1);
+}
+
+function incrementPoints() {
+  points = points + 10;
+  displayPoints();
+}
+
+function displayPoints() {
+  document.querySelector("#score_count").textContent = points;
 }
