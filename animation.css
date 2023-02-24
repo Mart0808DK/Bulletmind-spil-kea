@@ -264,6 +264,58 @@ img {
   
 }
 
+#game_overText {
+  display: grid;
+  left: 38%;
+  padding-top: 46%;
+  position: absolute;
+  font-size: 3em;
+  font-family: 'Rye', cursive;
+  color: white;
+}
+
+#game_overText1 {
+   display: grid;
+  left: 51%;
+  padding-top: 45.9%;
+  position: absolute;
+  font-size: 3em;
+  font-family: 'Rye', cursive;
+  color: white;
+}
+
+#score_countGO {
+   display: grid;
+  left: 48%;
+  padding-top: 46%;
+  position: absolute;
+  font-size: 3em;
+  font-family: 'Rye', cursive;
+  color: white;
+}
+
+
+
+#level_completeText {
+  display: grid;
+  left: 38%;
+  padding-top: 46%;
+  position: absolute;
+  font-size: 3em;
+  font-family: 'Rye', cursive;
+  color: white;
+}
+
+#level_completeText1 {
+   display: grid;
+  left: 53%;
+  padding-top: 45.9%;
+  position: absolute;
+  font-size: 3em;
+  font-family: 'Rye', cursive;
+  color: white;
+}
+
 #lives_Ui {
   display: grid;
   width: 8%;

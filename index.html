@@ -61,7 +61,6 @@
         <div id="game_ui">
           <div id="score_Board">
             <span id="score_count">0</span>
-            <img id="score_image" class="scoreI" src="" />
           </div>
           <img id="time_board" class="timeB" src="/images/hourglass removebg.gif" />
           <div id="lives_Ui">
@@ -73,8 +72,16 @@
       </div>
     </div>
     <div id="start_g" class="hidden"></div>
-    <div id="game_over" class="hidden"></div>
-    <div id="level_complete" class="hidden"></div>
+    <div id="game_over" class="hidden">
+      <span id="game_overText">Du fik</span>
+      <span id="score_countGO">0</span>
+      <span id="game_overText1">points</span>
+    </div>
+    <div id="level_complete" class="hidden">
+      <span id="level_completeText">Tillykke du fik</span>
+      <span id="score_countGO">0</span>
+      <span id="level_completeText1">points</span>
+    </div>
   </body>
   <script src="app.js"></script>
 

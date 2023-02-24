@@ -92,6 +92,7 @@ function incrementPoints() {
 }
 
 function displayPoints() {
+  document.querySelector("#score_countGO").textContent = points;
   document.querySelector("#score_count").textContent = points;
 }
 
@@ -111,10 +112,12 @@ function displayDecrementLives() {
 
 function level_Complete1() {
   document.querySelector("#game_background").classList.remove("hidden");
+  document.querySelector("#game_elements").classList.add("hidden");
   document.querySelector("#level_complete").classList.remove("hidden");
 }
 
 function game_Over1() {
   document.querySelector("#game_background").classList.remove("hidden");
+  document.querySelector("#game_elements").classList.add("hidden");
   document.querySelector("#game_over").classList.remove("hidden");
 }
