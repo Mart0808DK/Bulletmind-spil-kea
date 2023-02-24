@@ -22,6 +22,9 @@ function start() {
   document
     .querySelector("#bandit2_container")
     .addEventListener("click", zoom_Bandit2);
+  document
+    .querySelector("#bandit3_container")
+    .addEventListener("click", zoom_Bandit3);
 }
 
 function zoom_Civil1() {
@@ -194,6 +197,41 @@ function repeatB2() {
     .querySelector("#bandit2_container")
     .addEventListener("click", zoom_Bandit2);
 }
+
+function zoom_Bandit3() {
+  document
+    .querySelector("#bandit3_container")
+    .removeEventListener("click", zoom_Bandit3);
+
+  document.querySelector("#bandit3_container").classList.add("paused");
+
+  document.querySelector("#bandit3_sprite").classList.add("zoom_out");
+
+  document
+    .querySelector("#bandit3_container")
+    .addEventListener("animationend", repeatB3);
+
+  incrementPoints();
+}
+
+function repeatB3() {
+  document
+    .querySelector("#bandit3_container")
+    .removeEventListener("animationend", repeatB3);
+
+  document.querySelector("#bandit3_sprite").classList.remove("zoom_out");
+
+  document.querySelector("#bandit3_container").classList.remove("paused");
+
+  document.querySelector("#bandit3_container").classList.remove("band2");
+  document.querySelector("#bandit3_container").offsetWidth;
+  document.querySelector("#bandit3_container").classList.add("band2");
+
+  document
+    .querySelector("#bandit3_container")
+    .addEventListener("click", zoom_Bandit3);
+}
+
 
 function incrementPoints() {
   points = points + 10;
