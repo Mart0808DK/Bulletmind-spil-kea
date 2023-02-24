@@ -10,12 +10,18 @@ function start() {
   document
     .querySelector("#civil_container")
     .addEventListener("click", zoom_Civil1);
-    document
+  document
       .querySelector("#civil_container2")
       .addEventListener("click", zoom_Civil2);
   document
+    .querySelector("#civil_container3")
+    .addEventListener("click", zoom_Civil3);
+  document
     .querySelector("#bandit1_container")
     .addEventListener("click", zoom_Bandit1);
+  document
+    .querySelector("#bandit2_container")
+    .addEventListener("click", zoom_Bandit2);
 }
 
 function zoom_Civil1() {
@@ -86,6 +92,41 @@ function repeatC2() {
     .addEventListener("click", zoom_Civil2);
 }
 
+function zoom_Civil3() {
+  document
+    .querySelector("#civil_container3")
+    .removeEventListener("click", zoom_Civil3);
+
+  document.querySelector("#civil_container3").classList.add("paused");
+
+  document.querySelector("#civil_sprite3").classList.add("zoom_out");
+
+  document
+    .querySelector("#civil_container3")
+    .addEventListener("animationend", repeatC3);
+
+  decrementPoints();
+}
+
+function repeatC3() {
+  document
+    .querySelector("#civil_container3")
+    .removeEventListener("animationend", repeatC3);
+
+  document.querySelector("#civil_sprite3").classList.remove("zoom_out");
+
+  document.querySelector("#civil_container3").classList.remove("paused");
+
+  document.querySelector("#civil_container3").classList.remove("civil3");
+  document.querySelector("#civil_container3").offsetWidth;
+  document.querySelector("#civil_container3").classList.add("civil3");
+
+  document
+    .querySelector("#civil_container3")
+    .addEventListener("click", zoom_Civil3);
+}
+
+
 function zoom_Bandit1() {
   document
     .querySelector("#bandit1_container")
@@ -118,6 +159,40 @@ function repeatB1() {
   document
     .querySelector("#bandit1_container")
     .addEventListener("click", zoom_Bandit1);
+}
+
+function zoom_Bandit2() {
+  document
+    .querySelector("#bandit2_container")
+    .removeEventListener("click", zoom_Bandit2);
+
+  document.querySelector("#bandit2_container").classList.add("paused");
+
+  document.querySelector("#bandit2_sprite").classList.add("zoom_out");
+
+  document
+    .querySelector("#bandit2_container")
+    .addEventListener("animationend", repeatB2);
+
+  incrementPoints();
+}
+
+function repeatB2() {
+  document
+    .querySelector("#bandit2_container")
+    .removeEventListener("animationend", repeatB2);
+
+  document.querySelector("#bandit2_sprite").classList.remove("zoom_out");
+
+  document.querySelector("#bandit2_container").classList.remove("paused");
+
+  document.querySelector("#bandit2_container").classList.remove("band2");
+  document.querySelector("#bandit2_container").offsetWidth;
+  document.querySelector("#bandit2_container").classList.add("band2");
+
+  document
+    .querySelector("#bandit2_container")
+    .addEventListener("click", zoom_Bandit2);
 }
 
 function incrementPoints() {
