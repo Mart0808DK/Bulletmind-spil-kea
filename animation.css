@@ -294,11 +294,21 @@ img {
   color: white;
 }
 
+#score_countGO2 {
+  display: grid;
+  left: 47%;
+  padding-top: 46%;
+  position: absolute;
+  font-size: 3em;
+  font-family: 'Rye', cursive;
+  color: white;
+}
+
 
 
 #level_completeText {
   display: grid;
-  left: 38%;
+  left: 24%;
   padding-top: 46%;
   position: absolute;
   font-size: 3em;
@@ -307,8 +317,8 @@ img {
 }
 
 #level_completeText1 {
-   display: grid;
-  left: 53%;
+  display: grid;
+  left: 52%;
   padding-top: 45.9%;
   position: absolute;
   font-size: 3em;

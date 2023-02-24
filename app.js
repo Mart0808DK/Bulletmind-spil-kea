@@ -10,6 +10,9 @@ function start() {
   document
     .querySelector("#civil_container")
     .addEventListener("click", zoom_Civil1);
+    document
+      .querySelector("#civil_container2")
+      .addEventListener("click", zoom_Civil2);
   document
     .querySelector("#bandit1_container")
     .addEventListener("click", zoom_Bandit1);
@@ -47,6 +50,40 @@ function repeatC1() {
   document
     .querySelector("#civil_container")
     .addEventListener("click", zoom_Civil1);
+}
+
+function zoom_Civil2() {
+  document
+    .querySelector("#civil_container2")
+    .removeEventListener("click", zoom_Civil2);
+
+  document.querySelector("#civil_container2").classList.add("paused");
+
+  document.querySelector("#civil_sprite2").classList.add("zoom_out");
+
+  document
+    .querySelector("#civil_container2")
+    .addEventListener("animationend", repeatC2);
+
+  decrementPoints();
+}
+
+function repeatC2() {
+  document
+    .querySelector("#civil_container2")
+    .removeEventListener("animationend", repeatC2);
+
+  document.querySelector("#civil_sprite2").classList.remove("zoom_out");
+
+  document.querySelector("#civil_container2").classList.remove("paused");
+
+  document.querySelector("#civil_container2").classList.remove("civil2");
+  document.querySelector("#civil_container2").offsetWidth;
+  document.querySelector("#civil_container2").classList.add("civil2");
+
+  document
+    .querySelector("#civil_container2")
+    .addEventListener("click", zoom_Civil2);
 }
 
 function zoom_Bandit1() {
@@ -94,6 +131,7 @@ function incrementPoints() {
 function displayPoints() {
   document.querySelector("#score_countGO").textContent = points;
   document.querySelector("#score_count").textContent = points;
+  document.querySelector("#score_countGO2").textContent = points;
 }
 
 function decrementPoints() {
