@@ -49,6 +49,35 @@ img {
   }
 }
 
+#timerClock {
+  font-family: "Rye", cursive;
+  padding-top: 2.4%;
+  left: 12%;
+  position: relative;
+  font-size: 2em;
+  color: white;
+  
+
+}
+
+#startGame {
+  display: grid;
+  grid-row: auto;
+  position: absolute;
+  top: 52%;
+  left: 38%;
+  visibility: hidden;
+  width: 20%;
+}
+
+#start_g {
+  grid-area: 1/1;
+  background-image: url(/images/Game_start4_1280x720.jpg);
+  background-size: cover;
+  aspect-ratio: 16/9;
+  width: 100%;
+}
+
 #game_over {
   grid-area: 1/1;
   background-image: url(/images/Game_over2__1280x720.jpg);
@@ -65,9 +94,9 @@ img {
   width: 100%;
 }
 
-
 .hidden,
-#game_over.hidden,#level_complete.hidden {
+#game_over.hidden,
+#level_complete.hidden,#start_g.hidden {
   display: none;
 }
 
@@ -98,8 +127,8 @@ img {
 #bandit1_container {
   width: 25%;
   position: absolute;
-  top: 18%;
-  left: 37%;
+  top: 20%;
+  left: 24%;
 }
 .band1 {
   animation-name: B1;
@@ -110,17 +139,21 @@ img {
 
 @keyframes B1 {
   0% {
-    transform: translate(-100%, 0%);
+    transform: translate(-50%, 0%);
   }
-  100% {
-    transform: translate(100%, 0%);
+  20% {
+    transform: translate(50%, 50%);
+  }
+
+  40% {
+    transform: translate(100%, 20%);
   }
 }
 #bandit2_container {
   width: 20%;
   position: absolute;
-  top: 15%;
-  left: 10;
+  top: 13%;
+  left: 5%;
 }
 
 .band2 {
@@ -132,10 +165,10 @@ img {
 
 @keyframes B2 {
   0% {
-    transform: translate(-50%, 20%);
+    transform: translate(-50%, 0%);
   }
   100% {
-    transform: translate(100%, -10%);
+    transform: translate(200%, 30%);
   }
 }
 
@@ -143,7 +176,7 @@ img {
   width: 25%;
   position: absolute;
   top: 20%;
-  left: -3%;
+  left: 80%;
 }
 
 .band3 {
@@ -155,10 +188,10 @@ img {
 
 @keyframes B3 {
   0% {
-    transform: translate(-100%, 0);
+    transform: translate(100%, 0);
   }
   100% {
-    transform: translate(150%, 30%);
+    transform: translate(-200%, 20%);
   }
 }
 #civil_container {
@@ -188,8 +221,8 @@ img {
 #civil_container2 {
   width: 20%;
   position: absolute;
-  top: 50%;
-  left: -20%;
+  top: 45%;
+  left: 10%;
 }
 
 .civil2 {
@@ -204,7 +237,7 @@ img {
     transform: translate(-100%, 0%);
   }
   100% {
-    transform: translate(100%, 0%);
+    transform: translate(400%, 0%);
   }
 }
 
@@ -212,7 +245,7 @@ img {
   width: 18%;
   position: absolute;
   top: 10%;
-  left: 1%;
+  left: 70%;
 }
 
 .civil3 {
@@ -224,10 +257,10 @@ img {
 
 @keyframes C3 {
   0% {
-    transform: translate(0, 0);
+    transform: translate(50%, 10%);
   }
   100% {
-    transform: translate(-100%, -60%);
+    transform: translate(-1000%, 10%);
   }
 }
 
@@ -241,7 +274,7 @@ img {
   display: grid;
   width: 4%;
   position: absolute;
-  padding-top: 1%;
+  padding-top: 2%;
   right: 5%;
 }
 
@@ -252,16 +285,14 @@ img {
   left: 50%;
 }
 
-
 #score_count {
   display: grid;
   left: 48%;
   padding-top: 1.5%;
   position: absolute;
   font-size: 3em;
-  font-family: 'Rye', cursive;
+  font-family: "Rye", cursive;
   color: white;
-  
 }
 
 #game_overText {
@@ -270,27 +301,27 @@ img {
   padding-top: 46%;
   position: absolute;
   font-size: 3em;
-  font-family: 'Rye', cursive;
+  font-family: "Rye", cursive;
   color: white;
 }
 
 #game_overText1 {
-   display: grid;
+  display: grid;
   left: 52%;
   padding-top: 45.9%;
   position: absolute;
   font-size: 3em;
-  font-family: 'Rye', cursive;
+  font-family: "Rye", cursive;
   color: white;
 }
 
 #score_countGO {
-   display: grid;
+  display: grid;
   left: 48%;
   padding-top: 46%;
   position: absolute;
   font-size: 3em;
-  font-family: 'Rye', cursive;
+  font-family: "Rye", cursive;
   color: white;
 }
 
@@ -300,11 +331,9 @@ img {
   padding-top: 46%;
   position: absolute;
   font-size: 3em;
-  font-family: 'Rye', cursive;
+  font-family: "Rye", cursive;
   color: white;
 }
-
-
 
 #level_completeText {
   display: grid;
@@ -312,7 +341,7 @@ img {
   padding-top: 46%;
   position: absolute;
   font-size: 3em;
-  font-family: 'Rye', cursive;
+  font-family: "Rye", cursive;
   color: white;
 }
 
@@ -322,7 +351,7 @@ img {
   padding-top: 45.9%;
   position: absolute;
   font-size: 3em;
-  font-family: 'Rye', cursive;
+  font-family: "Rye", cursive;
   color: white;
 }
 
@@ -337,13 +366,12 @@ img {
 }
 
 .life_B {
-   filter: drop-shadow(0 0 2px yellow);
+  filter: drop-shadow(0 0 2px yellow);
 }
 
 .broken_heart {
-    filter: grayscale(100%) blur(.5px);
+  filter: grayscale(100%) blur(0.5px);
 }
-
 
 .paused {
   animation-play-state: paused;

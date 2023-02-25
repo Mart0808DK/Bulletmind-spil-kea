@@ -3,6 +3,9 @@
 let points = 0;
 let lives = 3;
 
+let min = 1
+let secs = min * 60;
+
 window.addEventListener("load", start);
 
 function start() {
@@ -271,4 +274,10 @@ function game_Over1() {
   document.querySelector("#game_background").classList.remove("hidden");
   document.querySelector("#game_elements").classList.add("hidden");
   document.querySelector("#game_over").classList.remove("hidden");
+}
+
+function game_start() {
+  document.querySelector("#game_background").classList.remove("hidden");
+  document.querySelector("#game_elements").classList.add("hidden");
+  document.querySelector("#start_g").classList.remove("hidden");
 }
