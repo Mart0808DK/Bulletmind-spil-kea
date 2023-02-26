@@ -2,9 +2,10 @@
 
 let points = 0;
 let lives = 3;
+const startingMinutes = 2;
+let time = startingMinutes * 60;
 
-let min = 1
-let secs = min * 60;
+const countdownEl = document.getElementById('countdown')
 
 window.addEventListener("load", start);
 
@@ -280,4 +281,16 @@ function game_start() {
   document.querySelector("#game_background").classList.remove("hidden");
   document.querySelector("#game_elements").classList.add("hidden");
   document.querySelector("#start_g").classList.remove("hidden");
+}
+
+setInterval(updateCountdown, 1000);
+
+function updateCountdown() {
+  const minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+
+  seconds = seconds < 10 ? '0' + seconds : seconds; 
+
+  countdownEl.innerHTML = `${minutes}: ${seconds}`;
+  time--;
 }
