@@ -11,12 +11,27 @@ window.addEventListener("load", start);
 
 function start() {
   console.log("start");
+
+startBt();  
+
+}
+
+
+function startBt() {
+  document.querySelector("#start_g").classList.remove("hidden");
+  document.querySelector("#startGame").addEventListener("click", startGame);
+}
+
+function startGame() {
+console.log("startGame");
+  document.querySelector("#startGame").removeEventListener("click", startGame);
+    document.querySelector("#start_g").classList.add("hidden");
   document
     .querySelector("#civil_container")
     .addEventListener("click", zoom_Civil1);
   document
-      .querySelector("#civil_container2")
-      .addEventListener("click", zoom_Civil2);
+    .querySelector("#civil_container2")
+    .addEventListener("click", zoom_Civil2);
   document
     .querySelector("#civil_container3")
     .addEventListener("click", zoom_Civil3);
@@ -32,17 +47,15 @@ function start() {
 }
 
 function zoom_Civil1() {
-  document
-    .querySelector("#civil_container")
-    .removeEventListener("click", zoom_Civil1);
+  let civ1 = document.querySelector("#civil_container");
+  
+  civ1.removeEventListener("click", zoom_Civil1);
 
-  document.querySelector("#civil_container").classList.add("paused");
+  civ1.classList.add("paused");
 
-  document.querySelector("#civil_sprite").classList.add("zoom_out");
+  civ1.querySelector("img").classList.add("zoom_out");
 
-  document
-    .querySelector("#civil_container")
-    .addEventListener("animationend", repeatC1);
+  civ1.addEventListener("animationend", repeatC1);
 
   decrementPoints();
 }
@@ -66,17 +79,14 @@ function repeatC1() {
 }
 
 function zoom_Civil2() {
-  document
-    .querySelector("#civil_container2")
-    .removeEventListener("click", zoom_Civil2);
+  let civ2 = document.querySelector("#civil_container2");
+  civ2.removeEventListener("click", zoom_Civil2);
 
-  document.querySelector("#civil_container2").classList.add("paused");
+  civ2.classList.add("paused");
 
-  document.querySelector("#civil_sprite2").classList.add("zoom_out");
+  civ2.querySelector("img").classList.add("zoom_out");
 
-  document
-    .querySelector("#civil_container2")
-    .addEventListener("animationend", repeatC2);
+  civ2.addEventListener("animationend", repeatC2);
 
   decrementPoints();
 }
@@ -240,7 +250,7 @@ function repeatB3() {
 function incrementPoints() {
   points = points + 10;
   displayPoints();
-  if (points == 30) {
+  if (points == 100) {
     level_Complete1();
   }
 }
