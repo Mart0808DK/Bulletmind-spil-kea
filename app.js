@@ -61,25 +61,24 @@ function zoom_Civil1() {
 }
 
 function repeatC1() {
-  document
-    .querySelector("#civil_container")
-    .removeEventListener("animationend", repeatC1);
+  let restartC1 = document.querySelector("#civil_container");
+  
+  restartC1.removeEventListener("animationend", repeatC1);
 
-  document.querySelector("#civil_sprite").classList.remove("zoom_out");
+  restartC1.querySelector("img").classList.remove("zoom_out");
 
-  document.querySelector("#civil_container").classList.remove("paused");
+  restartC1.classList.remove("paused");
 
-  document.querySelector("#civil_container").classList.remove("civil1");
-  document.querySelector("#civil_container").offsetWidth;
-  document.querySelector("#civil_container").classList.add("civil1");
+  restartC1.classList.remove("civil1");
+  restartC1.offsetWidth;
+  restartC1.classList.add("civil1");
 
-  document
-    .querySelector("#civil_container")
-    .addEventListener("click", zoom_Civil1);
+  restartC1.addEventListener("click", zoom_Civil1);
 }
 
 function zoom_Civil2() {
   let civ2 = document.querySelector("#civil_container2");
+  
   civ2.removeEventListener("click", zoom_Civil2);
 
   civ2.classList.add("paused");
@@ -92,158 +91,139 @@ function zoom_Civil2() {
 }
 
 function repeatC2() {
-  document
-    .querySelector("#civil_container2")
-    .removeEventListener("animationend", repeatC2);
+  let restartC2 = document.querySelector("#civil_container2");
+  
+  restartC2.removeEventListener("animationend", repeatC2);
 
-  document.querySelector("#civil_sprite2").classList.remove("zoom_out");
+  restartC2.querySelector("img").classList.remove("zoom_out");
 
-  document.querySelector("#civil_container2").classList.remove("paused");
+  restartC2.classList.remove("paused");
 
-  document.querySelector("#civil_container2").classList.remove("civil2");
-  document.querySelector("#civil_container2").offsetWidth;
-  document.querySelector("#civil_container2").classList.add("civil2");
+  restartC2.classList.remove("civil2");
+  restartC2.offsetWidth;
+  restartC2.classList.add("civil2");
 
-  document
-    .querySelector("#civil_container2")
-    .addEventListener("click", zoom_Civil2);
+  restartC2.addEventListener("click", zoom_Civil2);
 }
 
 function zoom_Civil3() {
-  document
-    .querySelector("#civil_container3")
-    .removeEventListener("click", zoom_Civil3);
+  let civ3 = document.querySelector("#civil_container3");
+  civ3.removeEventListener("click", zoom_Civil3);
 
-  document.querySelector("#civil_container3").classList.add("paused");
+  civ3.classList.add("paused");
 
-  document.querySelector("#civil_sprite3").classList.add("zoom_out");
+  civ3.querySelector("img").classList.add("zoom_out");
 
-  document
-    .querySelector("#civil_container3")
-    .addEventListener("animationend", repeatC3);
+  civ3.addEventListener("animationend", repeatC3);
 
   decrementPoints();
 }
 
 function repeatC3() {
-  document
-    .querySelector("#civil_container3")
-    .removeEventListener("animationend", repeatC3);
+  let restartC3 = document.querySelector("#civil_container3");
+  
+  restartC3.removeEventListener("animationend", repeatC3);
 
-  document.querySelector("#civil_sprite3").classList.remove("zoom_out");
+  restartC3.querySelector("img").classList.remove("zoom_out");
 
-  document.querySelector("#civil_container3").classList.remove("paused");
+  restartC3.classList.remove("paused");
 
-  document.querySelector("#civil_container3").classList.remove("civil3");
-  document.querySelector("#civil_container3").offsetWidth;
-  document.querySelector("#civil_container3").classList.add("civil3");
+  restartC3.classList.remove("civil3");
+  restartC3.offsetWidth;
+  restartC3.classList.add("civil3");
 
-  document
-    .querySelector("#civil_container3")
-    .addEventListener("click", zoom_Civil3);
+  restartC3.addEventListener("click", zoom_Civil3);
 }
 
 
 function zoom_Bandit1() {
-  document
-    .querySelector("#bandit1_container")
-    .removeEventListener("click", zoom_Bandit1);
+  let ban1 = document.querySelector("#bandit1_container");
+  
+  ban1.removeEventListener("click", zoom_Bandit1);
 
-  document.querySelector("#bandit1_container").classList.add("paused");
+  ban1.classList.add("paused");
 
-  document.querySelector("#bandit1_sprite").classList.add("zoom_out");
+  ban1.querySelector("img").classList.add("zoom_out");
 
-  document
-    .querySelector("#bandit1_container")
-    .addEventListener("animationend", repeatB1);
+  ban1.addEventListener("animationend", repeatB1);
 
   incrementPoints();
 }
 
 function repeatB1() {
-  document
-    .querySelector("#bandit1_container")
-    .removeEventListener("animationend", repeatB1);
+  let restartB1 = document.querySelector("#bandit1_container");
+  
+  restartB1.removeEventListener("animationend", repeatB1);
 
-  document.querySelector("#bandit1_sprite").classList.remove("zoom_out");
+  restartB1.querySelector("img").classList.remove("zoom_out");
 
-  document.querySelector("#bandit1_container").classList.remove("paused");
+  restartB1.classList.remove("paused");
 
-  document.querySelector("#bandit1_container").classList.remove("band1");
-  document.querySelector("#bandit1_container").offsetWidth;
-  document.querySelector("#bandit1_container").classList.add("band1");
+  restartB1.classList.remove("band1");
+  restartB1.offsetWidth;
+  restartB1.classList.add("band1");
 
-  document
-    .querySelector("#bandit1_container")
-    .addEventListener("click", zoom_Bandit1);
+  restartB1.addEventListener("click", zoom_Bandit1);
 }
 
 function zoom_Bandit2() {
-  document
-    .querySelector("#bandit2_container")
-    .removeEventListener("click", zoom_Bandit2);
+  let ban2 = document.querySelector("#bandit2_container");
+  
+  ban2.removeEventListener("click", zoom_Bandit2);
 
-  document.querySelector("#bandit2_container").classList.add("paused");
+  ban2.classList.add("paused");
 
-  document.querySelector("#bandit2_sprite").classList.add("zoom_out");
+  ban2.querySelector("img").classList.add("zoom_out");
 
-  document
-    .querySelector("#bandit2_container")
-    .addEventListener("animationend", repeatB2);
+  ban2.addEventListener("animationend", repeatB2);
 
   incrementPoints();
 }
 
 function repeatB2() {
-  document
-    .querySelector("#bandit2_container")
-    .removeEventListener("animationend", repeatB2);
+  let restartB2 = document.querySelector("#bandit2_container");
+  
+  restartB2.removeEventListener("animationend", repeatB2);
 
-  document.querySelector("#bandit2_sprite").classList.remove("zoom_out");
+  restartB2.querySelector("img").classList.remove("zoom_out");
 
-  document.querySelector("#bandit2_container").classList.remove("paused");
+  restartB2.classList.remove("paused");
 
-  document.querySelector("#bandit2_container").classList.remove("band2");
-  document.querySelector("#bandit2_container").offsetWidth;
-  document.querySelector("#bandit2_container").classList.add("band2");
+  restartB2.classList.remove("band2");
+  restartB2.offsetWidth;
+  restartB2.classList.add("band2");
 
-  document
-    .querySelector("#bandit2_container")
-    .addEventListener("click", zoom_Bandit2);
+  restartB2.addEventListener("click", zoom_Bandit2);
 }
 
 function zoom_Bandit3() {
-  document
-    .querySelector("#bandit3_container")
-    .removeEventListener("click", zoom_Bandit3);
+  let ban3 = document.querySelector("#bandit3_container");
+  
+  ban3.removeEventListener("click", zoom_Bandit3);
 
-  document.querySelector("#bandit3_container").classList.add("paused");
+  ban3.classList.add("paused");
 
-  document.querySelector("#bandit3_sprite").classList.add("zoom_out");
+  ban3.querySelector("img").classList.add("zoom_out");
 
-  document
-    .querySelector("#bandit3_container")
-    .addEventListener("animationend", repeatB3);
+  ban3.addEventListener("animationend", repeatB3);
 
   incrementPoints();
 }
 
 function repeatB3() {
-  document
-    .querySelector("#bandit3_container")
-    .removeEventListener("animationend", repeatB3);
+  let restartB3 = document.querySelector("#bandit3_container");
+  
+  restartB3.removeEventListener("animationend", repeatB3);
 
-  document.querySelector("#bandit3_sprite").classList.remove("zoom_out");
+  restartB3.querySelector("img").classList.remove("zoom_out");
 
-  document.querySelector("#bandit3_container").classList.remove("paused");
+  restartB3.classList.remove("paused");
 
-  document.querySelector("#bandit3_container").classList.remove("band2");
-  document.querySelector("#bandit3_container").offsetWidth;
-  document.querySelector("#bandit3_container").classList.add("band2");
+  restartB3.classList.remove("band2");
+  restartB3.offsetWidth;
+  restartB3.classList.add("band2");
 
-  document
-    .querySelector("#bandit3_container")
-    .addEventListener("click", zoom_Bandit3);
+  restartB3.addEventListener("click", zoom_Bandit3);
 }
 
 
