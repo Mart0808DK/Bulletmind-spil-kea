@@ -87,6 +87,8 @@ img {
   background-size: cover;
   aspect-ratio: 16/9;
   width: 100%;
+  z-index: 1;
+  
 }
 
 #level_complete {
@@ -95,6 +97,7 @@ img {
   background-size: cover;
   aspect-ratio: 16/9;
   width: 100%;
+  z-index: 1;
 }
 
 .hidden,
