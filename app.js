@@ -54,7 +54,7 @@ function zoom_Civil1() {
 
   civ1.classList.add("paused");
 
-  civ1.querySelector("img").classList.add("zoom_out");
+  civ1.querySelector("img").classList.add("zoom_in");
 
   civ1.addEventListener("animationend", repeatC1);
 
@@ -67,7 +67,7 @@ function repeatC1() {
 
   restartC1.removeEventListener("animationend", repeatC1);
 
-  restartC1.querySelector("img").classList.remove("zoom_out");
+  restartC1.querySelector("img").classList.remove("zoom_in");
 
   restartC1.classList.remove("paused");
 
@@ -86,7 +86,7 @@ function zoom_Civil2() {
 
   civ2.classList.add("paused");
 
-  civ2.querySelector("img").classList.add("zoom_out");
+  civ2.querySelector("img").classList.add("zoom_in");
 
   civ2.addEventListener("animationend", repeatC2);
 
@@ -99,7 +99,7 @@ function repeatC2() {
 
   restartC2.removeEventListener("animationend", repeatC2);
 
-  restartC2.querySelector("img").classList.remove("zoom_out");
+  restartC2.querySelector("img").classList.remove("zoom_in");
 
   restartC2.classList.remove("paused");
 
@@ -117,7 +117,7 @@ function zoom_Civil3() {
 
   civ3.classList.add("paused");
 
-  civ3.querySelector("img").classList.add("zoom_out");
+  civ3.querySelector("img").classList.add("zoom_in");
 
   civ3.addEventListener("animationend", repeatC3);
 
@@ -130,7 +130,7 @@ function repeatC3() {
 
   restartC3.removeEventListener("animationend", repeatC3);
 
-  restartC3.querySelector("img").classList.remove("zoom_out");
+  restartC3.querySelector("img").classList.remove("zoom_in");
 
   restartC3.classList.remove("paused");
 
@@ -143,6 +143,7 @@ function repeatC3() {
 
 function zoom_Bandit1() {
   console.log("bandit1 hit");
+  document.querySelector("#sound_bandit_gun").play();
   let ban1 = document.querySelector("#bandit1_container");
 
   ban1.removeEventListener("click", zoom_Bandit1);
@@ -175,6 +176,7 @@ function repeatB1() {
 
 function zoom_Bandit2() {
   console.log("bandit2 hit");
+  document.querySelector("#sound_bandit_gun").play();
   let ban2 = document.querySelector("#bandit2_container");
 
   ban2.removeEventListener("click", zoom_Bandit2);
@@ -207,6 +209,7 @@ function repeatB2() {
 
 function zoom_Bandit3() {
   console.log("bandit 3 hit");
+  document.querySelector("#sound_bandit_gun").play();
   let ban3 = document.querySelector("#bandit3_container");
 
   ban3.removeEventListener("click", zoom_Bandit3);
