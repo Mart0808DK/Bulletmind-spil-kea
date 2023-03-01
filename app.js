@@ -24,6 +24,7 @@ function startGame() {
   console.log("startGame");
   document.querySelector("#sound_start_game").play();
   document.querySelector("#sound_start_game").loop = true;
+  document.querySelector("#sound_start_game").volume = 0.2;
   document.querySelector("#startGame").removeEventListener("click", startGame);
   document.querySelector("#start_g").classList.add("hidden");
   document
@@ -48,6 +49,7 @@ function startGame() {
 
 function zoom_Civil1() {
   console.log("civil 1 hit");
+  document.querySelector("#sound_civil").play();
   let civ1 = document.querySelector("#civil_container");
 
   civ1.removeEventListener("click", zoom_Civil1);
@@ -80,6 +82,7 @@ function repeatC1() {
 
 function zoom_Civil2() {
   console.log("civil 2 hit");
+  document.querySelector("#sound_civil").play();
   let civ2 = document.querySelector("#civil_container2");
 
   civ2.removeEventListener("click", zoom_Civil2);
@@ -112,6 +115,7 @@ function repeatC2() {
 
 function zoom_Civil3() {
   console.log("civil 3 hit");
+  document.querySelector("#sound_civil").play();
   let civ3 = document.querySelector("#civil_container3");
   civ3.removeEventListener("click", zoom_Civil3);
 
@@ -143,6 +147,7 @@ function repeatC3() {
 
 function zoom_Bandit1() {
   console.log("bandit1 hit");
+  document.querySelector("#sound_bandit_gun").currentTime = 0;
   document.querySelector("#sound_bandit_gun").play();
   let ban1 = document.querySelector("#bandit1_container");
 
@@ -176,6 +181,7 @@ function repeatB1() {
 
 function zoom_Bandit2() {
   console.log("bandit2 hit");
+  document.querySelector("#sound_bandit_gun").currentTime = 0;
   document.querySelector("#sound_bandit_gun").play();
   let ban2 = document.querySelector("#bandit2_container");
 
@@ -209,6 +215,7 @@ function repeatB2() {
 
 function zoom_Bandit3() {
   console.log("bandit 3 hit");
+  document.querySelector("#sound_bandit_gun").currentTime = 0;
   document.querySelector("#sound_bandit_gun").play();
   let ban3 = document.querySelector("#bandit3_container");
 

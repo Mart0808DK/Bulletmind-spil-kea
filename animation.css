@@ -1,6 +1,7 @@
 body {
   margin: 0;
   width: 100%;
+  cursor: crosshair;
 }
 
 img {
@@ -111,7 +112,18 @@ img {
 .restart {
   display: grid;
   left: 64%;
-  padding-top: 44.8%;
+  padding-top: 45.9%;
+  position: absolute;
+  font-size: 3em;
+  font-family: "Rye", cursive;
+  color: red;
+  cursor: pointer;
+}
+
+.restartL {
+  display: grid;
+  left: 64%;
+  padding-top: 45.9%;
   position: absolute;
   font-size: 3em;
   font-family: "Rye", cursive;
