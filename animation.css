@@ -91,6 +91,17 @@ img {
   
 }
 
+.restart {
+  display: grid;
+  left: 64%;
+  padding-top: 44.8%;
+  position: absolute;
+  font-size: 3em;
+  font-family: "Rye", cursive;
+  color: red;
+  cursor: pointer;
+}
+
 #level_complete {
   grid-area: 1/1;
   background-image: url(/images/Level-complete2_1280x720.jpg);
@@ -425,7 +436,7 @@ img {
 
 #level_completeText1 {
   display: grid;
-  left: 53%;
+  left: 52%;
   padding-top: 45.9%;
   position: absolute;
   font-size: 3em;

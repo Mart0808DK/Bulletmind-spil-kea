@@ -5,17 +5,15 @@ let lives = 3;
 const startingMinutes = 2;
 let time = startingMinutes * 60;
 
-const countdownEl = document.getElementById('countdown')
+const countdownEl = document.getElementById("countdown");
 
 window.addEventListener("load", start);
 
 function start() {
   console.log("start");
 
-startBt();  
-
+  startBt();
 }
-
 
 function startBt() {
   document.querySelector("#start_g").classList.remove("hidden");
@@ -23,9 +21,11 @@ function startBt() {
 }
 
 function startGame() {
-console.log("startGame");
+  console.log("startGame");
+  document.querySelector("#sound_start_game").play();
+  document.querySelector("#sound_start_game").loop = true;
   document.querySelector("#startGame").removeEventListener("click", startGame);
-    document.querySelector("#start_g").classList.add("hidden");
+  document.querySelector("#start_g").classList.add("hidden");
   document
     .querySelector("#civil_container")
     .addEventListener("click", zoom_Civil1);
@@ -49,7 +49,7 @@ console.log("startGame");
 function zoom_Civil1() {
   console.log("civil 1 hit");
   let civ1 = document.querySelector("#civil_container");
-  
+
   civ1.removeEventListener("click", zoom_Civil1);
 
   civ1.classList.add("paused");
@@ -64,7 +64,7 @@ function zoom_Civil1() {
 function repeatC1() {
   console.log("restart civil1");
   let restartC1 = document.querySelector("#civil_container");
-  
+
   restartC1.removeEventListener("animationend", repeatC1);
 
   restartC1.querySelector("img").classList.remove("zoom_out");
@@ -81,7 +81,7 @@ function repeatC1() {
 function zoom_Civil2() {
   console.log("civil 2 hit");
   let civ2 = document.querySelector("#civil_container2");
-  
+
   civ2.removeEventListener("click", zoom_Civil2);
 
   civ2.classList.add("paused");
@@ -96,7 +96,7 @@ function zoom_Civil2() {
 function repeatC2() {
   console.log("restart civil2");
   let restartC2 = document.querySelector("#civil_container2");
-  
+
   restartC2.removeEventListener("animationend", repeatC2);
 
   restartC2.querySelector("img").classList.remove("zoom_out");
@@ -127,7 +127,7 @@ function zoom_Civil3() {
 function repeatC3() {
   console.log("restart civil 3");
   let restartC3 = document.querySelector("#civil_container3");
-  
+
   restartC3.removeEventListener("animationend", repeatC3);
 
   restartC3.querySelector("img").classList.remove("zoom_out");
@@ -141,11 +141,10 @@ function repeatC3() {
   restartC3.addEventListener("click", zoom_Civil3);
 }
 
-
 function zoom_Bandit1() {
   console.log("bandit1 hit");
   let ban1 = document.querySelector("#bandit1_container");
-  
+
   ban1.removeEventListener("click", zoom_Bandit1);
 
   ban1.classList.add("paused");
@@ -158,9 +157,9 @@ function zoom_Bandit1() {
 }
 
 function repeatB1() {
-  console.log("restart bandit1")
+  console.log("restart bandit1");
   let restartB1 = document.querySelector("#bandit1_container");
-  
+
   restartB1.removeEventListener("animationend", repeatB1);
 
   restartB1.querySelector("img").classList.remove("zoom_out");
@@ -177,7 +176,7 @@ function repeatB1() {
 function zoom_Bandit2() {
   console.log("bandit2 hit");
   let ban2 = document.querySelector("#bandit2_container");
-  
+
   ban2.removeEventListener("click", zoom_Bandit2);
 
   ban2.classList.add("paused");
@@ -192,7 +191,7 @@ function zoom_Bandit2() {
 function repeatB2() {
   console.log("restart bandit 2");
   let restartB2 = document.querySelector("#bandit2_container");
-  
+
   restartB2.removeEventListener("animationend", repeatB2);
 
   restartB2.querySelector("img").classList.remove("zoom_out");
@@ -209,7 +208,7 @@ function repeatB2() {
 function zoom_Bandit3() {
   console.log("bandit 3 hit");
   let ban3 = document.querySelector("#bandit3_container");
-  
+
   ban3.removeEventListener("click", zoom_Bandit3);
 
   ban3.classList.add("paused");
@@ -224,7 +223,7 @@ function zoom_Bandit3() {
 function repeatB3() {
   console.log("restart bandit 3");
   let restartB3 = document.querySelector("#bandit3_container");
-  
+
   restartB3.removeEventListener("animationend", repeatB3);
 
   restartB3.querySelector("img").classList.remove("zoom_out");
@@ -238,11 +237,10 @@ function repeatB3() {
   restartB3.addEventListener("click", zoom_Bandit3);
 }
 
-
 function incrementPoints() {
   points = points + 10;
   displayPoints();
-  if (points == 100) {
+  if (points == 50) {
     level_Complete1();
   }
 }
@@ -257,7 +255,7 @@ function decrementPoints() {
   console.log("hello");
   if (lives <= 1) {
     game_Over1();
-  } 
+  }
   displayDecrementLives();
   lives--;
 }
@@ -271,12 +269,16 @@ function level_Complete1() {
   document.querySelector("#game_background").classList.remove("hidden");
   document.querySelector("#game_elements").classList.add("hidden");
   document.querySelector("#level_complete").classList.remove("hidden");
+  document.querySelector("#sound_start_game").pause();
+  document.querySelector("#sound_level_complete").play();
 }
 
 function game_Over1() {
   document.querySelector("#game_background").classList.remove("hidden");
   document.querySelector("#game_elements").classList.add("hidden");
   document.querySelector("#game_over").classList.remove("hidden");
+  document.querySelector("#sound_start_game").pause();
+  document.querySelector("#sound_game_over").play();
 }
 
 function game_start() {
@@ -291,7 +293,7 @@ function updateCountdown() {
   const minutes = Math.floor(time / 60);
   let seconds = time % 60;
 
-  seconds = seconds < 10 ? '0' + seconds : seconds; 
+  seconds = seconds < 10 ? "0" + seconds : seconds;
 
   countdownEl.innerHTML = `${minutes}: ${seconds}`;
   time--;
