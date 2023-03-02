@@ -97,8 +97,8 @@ img {
   grid-area: 1/1;
   position: absolute;
   top: 78%;
-  left: 38%;
-  width: 40%;
+  left: 27%;
+  width: 50%;
   cursor:pointer;   
   z-index: 0;
 }
