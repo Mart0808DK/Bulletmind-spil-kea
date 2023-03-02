@@ -16,42 +16,42 @@
       <div id="game">
         <div id="game_background"></div>
         <div id="game_elements">
-          <div id="bandit1_container" class="band1">
+          <div id="bandit1_container">
             <img
               id="bandit1_sprite"
               src="/images/Outlaw_two_guns-removebg.png"
               alt=""
             />
           </div>
-          <div id="bandit2_container" class="band2">
+          <div id="bandit2_container">
             <img
               id="bandit2_sprite"
               src="/images/Outlaw_2_mustache-removebg.png"
               alt=""
             />
           </div>
-          <div id="bandit3_container" class="band3">
+          <div id="bandit3_container">
             <img
               id="bandit3_sprite"
               src="/images/Outlaw_3_blondie-removebg.png"
               alt=""
             />
           </div>
-          <div id="civil_container" class="civil1">
+          <div id="civil_container">
             <img
               id="civil_sprite"
               src="/images/Bartender_western-removebg.png"
               alt=""
             />
           </div>
-          <div id="civil_container2" class="civil2">
+          <div id="civil_container2">
             <img
               id="civil_sprite2"
               src="/images/Lady_western-removebg.png"
               alt=""
             />
           </div>
-          <div id="civil_container3" class="civil3">
+          <div id="civil_container3">
             <img
               id="civil_sprite3"
               src="/images/Cowboy_western-removebg.png"
@@ -75,19 +75,21 @@
       </div>
     </div>
     <div id="start_g">
+      <h2 id="game_description">Shoot 5 bandits to win. dont Shoot the civilians
+      </h2>
       <div id="startGame">Start</div>
     </div>
     <div id="game_over" class="hidden">
       <span id="game_overText">Du fik</span>
       <span id="score_countGO">0</span>
       <span id="game_overText1">points</span>
-      <a class="restart" onClick="window.location.reload()">Restart</a>
+      <a id="btn_restart" class="restart_Game">Restart</a>
     </div>
     <div id="level_complete" class="hidden">
       <span id="level_completeText">Tillykke du fik</span>
       <span id="score_countGO2">0</span>
       <span id="level_completeText1">points</span>
-      <a class="restartL" onClick="window.location.reload()">Restart</a>
+      <button id="btn_go_to_start" class="restartL">Restart</button>
     </div>
 
     <audio id="sound_start_game" src="/sounds/saloon-piano-honky-tonk-14540.mp3"></audio>

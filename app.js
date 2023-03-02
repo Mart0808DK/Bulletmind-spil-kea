@@ -11,8 +11,9 @@ window.addEventListener("load", start);
 
 function start() {
   console.log("start");
-
   startBt();
+  document.querySelector("#btn_go_to_start").addEventListener("click", showStartScreen);
+  document.querySelector("#btn_restart").addEventListener("click", startGame);
 }
 
 function startBt() {
@@ -22,11 +23,25 @@ function startBt() {
 
 function startGame() {
   console.log("startGame");
+  resetLives();
+  resetPoint();
+  showGameScreen();
+  document.querySelector("#civil_container").classList.add("civil1");
+  document.querySelector("#civil_container2").classList.add("civil2");
+  document.querySelector("#civil_container3").classList.add("civil3");
+  document.querySelector("#bandit1_container").classList.add("band1");
+  document.querySelector("#bandit2_container").classList.add("band2");
+  document.querySelector("#bandit3_container").classList.add("band3");
+
   document.querySelector("#sound_start_game").play();
   document.querySelector("#sound_start_game").loop = true;
   document.querySelector("#sound_start_game").volume = 0.2;
-  document.querySelector("#startGame").removeEventListener("click", startGame);
   document.querySelector("#start_g").classList.add("hidden");
+
+ 
+  
+  
+
   document
     .querySelector("#civil_container")
     .addEventListener("click", zoom_Civil1);
@@ -276,16 +291,16 @@ function displayDecrementLives() {
 }
 
 function level_Complete1() {
+  stopAnimation();
   document.querySelector("#game_background").classList.remove("hidden");
-  document.querySelector("#game_elements").classList.add("hidden");
   document.querySelector("#level_complete").classList.remove("hidden");
   document.querySelector("#sound_start_game").pause();
   document.querySelector("#sound_level_complete").play();
 }
 
 function game_Over1() {
+  stopAnimation();
   document.querySelector("#game_background").classList.remove("hidden");
-  document.querySelector("#game_elements").classList.add("hidden");
   document.querySelector("#game_over").classList.remove("hidden");
   document.querySelector("#sound_start_game").pause();
   document.querySelector("#sound_game_over").play();
@@ -293,7 +308,7 @@ function game_Over1() {
 
 function game_start() {
   document.querySelector("#game_background").classList.remove("hidden");
-  document.querySelector("#game_elements").classList.add("hidden");
+  // document.querySelector("#game_elements").classList.add("hidden");
   document.querySelector("#start_g").classList.remove("hidden");
 }
 
@@ -307,4 +322,52 @@ function updateCountdown() {
 
   countdownEl.innerHTML = `${minutes}: ${seconds}`;
   time--;
+}
+
+function showStartScreen() {
+  document.querySelector("#start_g").classList.remove("hidden");
+  document.querySelector("#game_over").classList.add("hidden");
+  document.querySelector("#level_complete").classList.add("hidden");
+}
+
+function resetLives() {
+  lives = 3;
+
+  document.querySelector("#life_board1").classList.remove("broken_heart");
+  document.querySelector("#life_board2").classList.remove("broken_heart");
+  document.querySelector("#life_board3").classList.remove("broken_heart");
+
+  document.querySelector("#life_board" + lives).classList.add("life_B");
+  document.querySelector("#life_board" + lives).classList.add("life_B");
+  document.querySelector("#life_board" + lives).classList.add("life_B");
+}
+
+function resetPoint() {
+  points = 0;
+
+  displayPoints();
+}
+
+function showGameScreen() {
+  document.querySelector("#start_g").classList.add("hidden");
+  document.querySelector("#game_over").classList.add("hidden");
+  document.querySelector("#level_complete").classList.add("hidden");
+}
+
+
+function stopAnimation() {
+  
+  document.querySelector("#civil_container").classList.remove("civil1");
+  document.querySelector("#civil_container").offsetWidth;
+  document.querySelector("#civil_container2").classList.remove("civil2");
+  document.querySelector("#civil_container2").offsetWidth;
+  document.querySelector("#civil_container3").classList.remove("civil3");
+  document.querySelector("#civil_container3").offsetWidth;
+
+  document.querySelector("#bandit1_container").classList.remove("band1")
+  document.querySelector("#bandit1_container").offsetWidth;
+  document.querySelector("#bandit2_container").classList.remove("band2")
+  document.querySelector("#bandit2_container").offsetWidth;
+  document.querySelector("#bandit3_container").classList.remove("band3")
+  document.querySelector("#bandit3_container").offsetWidth;
 }

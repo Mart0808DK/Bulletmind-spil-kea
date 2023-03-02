@@ -90,6 +90,19 @@ img {
   z-index: 0;
 }
 
+#game_description {
+  font-family: "Rye", cursive;
+  font-size: 2em;
+  display: grid;
+  grid-area: 1/1;
+  position: absolute;
+  top: 78%;
+  left: 38%;
+  width: 40%;
+  cursor:pointer;   
+  z-index: 0;
+}
+
 #start_g {
   grid-area: 1/1;
   background-image: url(/images/Game_start5_1280x720.jpg);
@@ -109,10 +122,12 @@ img {
   
 }
 
-.restart {
+.restart_Game {
+  background: transparent;
+  border: none;
   display: grid;
   left: 64%;
-  padding-top: 45.9%;
+  top: 81.4%;
   position: absolute;
   font-size: 3em;
   font-family: "Rye", cursive;
@@ -121,9 +136,11 @@ img {
 }
 
 .restartL {
+  background: transparent;
+  border: none;
   display: grid;
   left: 64%;
-  padding-top: 45.9%;
+  top: 81%;
   position: absolute;
   font-size: 3em;
   font-family: "Rye", cursive;
