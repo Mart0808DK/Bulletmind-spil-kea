@@ -28,12 +28,7 @@ function startGame() {
   resetPoint();
   showGameScreen();
   time_bar();
-  document.querySelector("#civil_container").classList.add("civil1");
-  document.querySelector("#civil_container2").classList.add("civil2");
-  document.querySelector("#civil_container3").classList.add("civil3");
-  document.querySelector("#bandit1_container").classList.add("band1");
-  document.querySelector("#bandit2_container").classList.add("band2");
-  document.querySelector("#bandit3_container").classList.add("band3");
+  startAnimation();
 
   document.querySelector("#sound_start_game").play();
   document.querySelector("#sound_start_game").loop = true;
@@ -164,9 +159,9 @@ function repeatC3() {
 
 function zoom_Bandit1() {
   console.log("bandit1 hit");
-  document.querySelector("#sound_bandit_gun").volume = 0.4;
+  document.querySelector("#sound_bandit_gun").volume = 0.4 ;
   document.querySelector("#sound_bandit_gun").currentTime = 0;
-  document.querySelector("#sound_bandit_gun").play();
+  document.querySelector("#sound_bandit_gun").play()   ;
   let ban1 = document.querySelector("#bandit1_container");
 
   ban1.removeEventListener("mousedown", zoom_Bandit1);
@@ -346,6 +341,15 @@ function showGameScreen() {
   document.querySelector("#start_g").classList.add("hidden");
   document.querySelector("#game_over").classList.add("hidden");
   document.querySelector("#level_complete").classList.add("hidden");
+}
+
+function startAnimation() {
+document.querySelector("#civil_container").classList.add("civil1");
+document.querySelector("#civil_container2").classList.add("civil2");
+document.querySelector("#civil_container3").classList.add("civil3");
+document.querySelector("#bandit1_container").classList.add("band1");
+document.querySelector("#bandit2_container").classList.add("band2");
+document.querySelector("#bandit3_container").classList.add("band3");
 }
 
 function stopAnimation() {
