@@ -69,12 +69,44 @@ img {
 }
 
 #timerClock {
-  font-family: "Rye", cursive;
-  padding-top: 0.6%;
-  left: 12%;
-  position: relative;
-  font-size: 2em;
-  color: white;
+  position: absolute;
+  width: 1.7%;
+  aspect-ratio: 6/30;
+  border: 2px solid black;
+  background-color: rgba(208, 204, 204, 0.383);
+  top: -1.4%;
+  left: 15%;
+  transform: rotate(90deg);
+}
+
+#time_bar_sprite {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: limegreen;
+  transform-origin: center bottom;
+}
+
+.shrink {
+  animation-name: shrink_kf;
+  animation-duration: 60s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes shrink_kf {
+  0% {
+    scale: 1 1;
+    background-color: limegreen;
+  }
+  50% {
+    background-color: rgb(255, 230, 0);
+  }
+  100% {
+    scale: 1 0;
+    background-color: red;
+  }
 }
 
 #startGame {
@@ -86,8 +118,8 @@ img {
   top: 71%;
   left: 42%;
   width: 20%;
-  cursor:pointer;   
-  z-index: 0;
+  cursor: pointer;
+  z-index: 1;
 }
 
 #game_description {
@@ -99,11 +131,13 @@ img {
   top: 78%;
   left: 27%;
   width: 50%;
-  cursor:pointer;   
-  z-index: 0;
+  cursor: pointer;
+  z-index: 1;
 }
 
 #start_g {
+  position: absolute;
+  display: grid;
   grid-area: 1/1;
   background-image: url(/images/Game_start5_1280x720.jpg);
   background-size: cover;
@@ -119,15 +153,15 @@ img {
   aspect-ratio: 16/9;
   width: 100%;
   z-index: 1;
-  
 }
 
 .restart_Game {
+  position: absolute;
   background: transparent;
   border: none;
   display: grid;
   left: 64%;
-  top: 81.4%;
+  top: 81.5%;
   position: absolute;
   font-size: 3em;
   font-family: "Rye", cursive;
@@ -140,7 +174,7 @@ img {
   border: none;
   display: grid;
   left: 64%;
-  top: 81%;
+  top: 81.5%;
   position: absolute;
   font-size: 3em;
   font-family: "Rye", cursive;
@@ -208,7 +242,6 @@ img {
 
   25% {
     transform: translate(200%, 3%);
-
   }
 
   50% {
@@ -222,8 +255,6 @@ img {
   100% {
     transform: translate(-120%, 4%);
   }
-
-
 }
 
 #bandit2_container {
@@ -321,7 +352,7 @@ img {
   }
 
   75% {
-    transform: translate(300%,3%);
+    transform: translate(300%, 3%);
   }
 
   100% {
@@ -351,7 +382,7 @@ img {
     transform: translate(300%, 1%);
   }
 
-  50%{
+  50% {
     transform: translate(-100%, 1%);
   }
 
@@ -402,6 +433,7 @@ img {
 #game_ui {
   grid-area: 1 / 1;
   position: relative;
+  pointer-events: none;
 }
 
 /* ui-elementer */
@@ -495,7 +527,7 @@ img {
   width: 8%;
   position: absolute;
   padding-top: 2%;
-  top: 6%;
+  top: 0.5%;
   left: 2%;
   grid-template-columns: 1fr 1fr 1fr;
 }

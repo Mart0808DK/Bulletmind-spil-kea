@@ -5,15 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BulletMind</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rye&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="animation.css" />
   </head>
 
   <body>
     <div id="screen">
       <div id="game">
+        <div id="start_g">
+          <h2 id="game_description">
+        The Saloon has been overrun by Outlaws. You need to save the Civilians
+        Sherif.You need to shoot 5 Outlaws. Dont hit the Civilians. You got 1
+        min
+      </h2>
+      <div id="startGame">Start</div>
+    </div>
+    <div id="game_over" class="hidden">
+      <span id="game_overText">Du fik</span>
+      <span id="score_countGO">0</span>
+      <span id="game_overText1">points</span>
+      <a id="btn_restart" class="restart_Game">Restart</a>
+    </div>
+    <div id="level_complete" class="hidden">
+      <span id="level_completeText">Tillykke du fik</span>
+      <span id="score_countGO2">0</span>
+      <span id="level_completeText1">points</span>
+      <button id="btn_go_to_start" class="restartL">Restart</button>
+    </div>
         <div id="game_background"></div>
         <div id="game_elements">
           <div id="bandit1_container">
@@ -58,46 +81,38 @@
               alt=""
             />
           </div>
+        </div>
         <div id="game_ui">
           <div id="score_Board">
             <span id="score_count">0</span>
           </div>
-          <img id="time_board" class="timeB" src="/images/hourglass removebg.gif" />
-           <div id="timerClock">
-            <p id="countdown">02:00</p>
-           </div>
+          <img
+            id="time_board"
+            class="timeB"
+            src="/images/hourglass removebg.gif"
+          />
+          <div id="timerClock">
+            <div id="time_bar_sprite"></div>
+          </div>
           <div id="lives_Ui">
-          <img id="life_board1" class="life_B" src="/images/heart.png" />
-          <img id="life_board2" class="life_B" src="/images/heart.png" />
-          <img id="life_board3" class="life_B" src="/images/heart.png" />
-        </div>
+            <img id="life_board1" class="life_B" src="/images/heart.png" />
+            <img id="life_board2" class="life_B" src="/images/heart.png" />
+            <img id="life_board3" class="life_B" src="/images/heart.png" />
+          </div>
         </div>
       </div>
     </div>
-    <div id="start_g">
-      <h2 id="game_description">Shoot 5 bandits to win. dont Shoot the civilians.</h2>
-      <div id="startGame">Start</div>
-    </div>
-    <div id="game_over" class="hidden">
-      <span id="game_overText">Du fik</span>
-      <span id="score_countGO">0</span>
-      <span id="game_overText1">points</span>
-      <a id="btn_restart" class="restart_Game">Restart</a>
-    </div>
-    <div id="level_complete" class="hidden">
-      <span id="level_completeText">Tillykke du fik</span>
-      <span id="score_countGO2">0</span>
-      <span id="level_completeText1">points</span>
-      <button id="btn_go_to_start" class="restartL">Restart</button>
-    </div>
-
-    <audio id="sound_start_game" src="/sounds/saloon-piano-honky-tonk-14540.mp3"></audio>
-    <audio id="sound_game_over" src="/sounds/highnoon-39371gameover.mp3"></audio>
+    <audio
+      id="sound_start_game"
+      src="/sounds/saloon-piano-honky-tonk-14540.mp3"
+    ></audio>
+    <audio
+      id="sound_game_over"
+      src="/sounds/highnoon-39371gameover.mp3"
+    ></audio>
     <audio id="sound_level_complete" src="/sounds/Level_complete.mp3"></audio>
     <audio id="sound_bandit_gun" src="/sounds/bandit gun shot.mp3"></audio>
     <audio id="sound_civil" src="/sounds/civil sound yee boi.mp3"></audio>
   </body>
   <script src="app.js"></script>
-
-
 </html>
