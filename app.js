@@ -164,6 +164,7 @@ function repeatC3() {
 
 function zoom_Bandit1() {
   console.log("bandit1 hit");
+  document.querySelector("#sound_bandit_gun").volume = 0.4;
   document.querySelector("#sound_bandit_gun").currentTime = 0;
   document.querySelector("#sound_bandit_gun").play();
   let ban1 = document.querySelector("#bandit1_container");
