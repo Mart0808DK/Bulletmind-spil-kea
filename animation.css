@@ -129,8 +129,8 @@ img {
   grid-area: 1/1;
   position: absolute;
   top: 78%;
-  left: 27%;
-  width: 50%;
+  left: 21%;
+  width: 60%;
   cursor: pointer;
   z-index: 1;
 }
@@ -474,7 +474,7 @@ img {
 
 #game_overText1 {
   display: grid;
-  left: 52%;
+  left: 52.5%;
   padding-top: 45.9%;
   position: absolute;
   font-size: 3em;
@@ -514,7 +514,7 @@ img {
 
 #level_completeText1 {
   display: grid;
-  left: 52%;
+  left: 53%;
   padding-top: 45.9%;
   position: absolute;
   font-size: 3em;
