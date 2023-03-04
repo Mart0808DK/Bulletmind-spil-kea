@@ -23,6 +23,7 @@ function startBt() {
 
 function startGame() {
   console.log("startGame");
+  document.querySelector("#sound_level_complete").pause();
   document.querySelector("#sound_game_over").pause();
   resetLives();
   resetPoint();
@@ -34,25 +35,10 @@ function startGame() {
   document.querySelector("#sound_start_game").loop = true;
   document.querySelector("#sound_start_game").volume = 0.2;
   document.querySelector("#start_g").classList.add("hidden");
+
+  startClickEvent();
  
-  document
-    .querySelector("#civil_container")
-    .addEventListener("mousedown", zoom_Civil1);
-  document
-    .querySelector("#civil_container2")
-    .addEventListener("mousedown", zoom_Civil2);
-  document
-    .querySelector("#civil_container3")
-    .addEventListener("mousedown", zoom_Civil3);
-  document
-    .querySelector("#bandit1_container")
-    .addEventListener("mousedown", zoom_Bandit1);
-  document
-    .querySelector("#bandit2_container")
-    .addEventListener("mousedown", zoom_Bandit2);
-  document
-    .querySelector("#bandit3_container")
-    .addEventListener("mousedown", zoom_Bandit3);
+  
 }
 
 function zoom_Civil1() {
@@ -263,7 +249,7 @@ function repeatB3() {
 function incrementPoints() {
   points = points + 10;
   displayPoints();
-  if (points == 50) {
+  if (points == 100) {
     level_Complete1();
   }
 }
@@ -388,4 +374,25 @@ function resetTimer() {
   document.querySelector("#time_bar_sprite").offsetWidth;
   document.querySelector("#time_bar_sprite").classList.add("shrink");
   document.querySelector("#time_bar_sprite").addEventListener("#animationend", timeisUp);
+}
+
+function startClickEvent() {
+document
+  .querySelector("#civil_container")
+  .addEventListener("mousedown", zoom_Civil1);
+document
+  .querySelector("#civil_container2")
+  .addEventListener("mousedown", zoom_Civil2);
+document
+  .querySelector("#civil_container3")
+  .addEventListener("mousedown", zoom_Civil3);
+document
+  .querySelector("#bandit1_container")
+  .addEventListener("mousedown", zoom_Bandit1);
+document
+  .querySelector("#bandit2_container")
+  .addEventListener("mousedown", zoom_Bandit2);
+document
+  .querySelector("#bandit3_container")
+  .addEventListener("mousedown", zoom_Bandit3);
 }
