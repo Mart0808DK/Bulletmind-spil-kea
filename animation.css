@@ -34,6 +34,9 @@ img {
   width: 100%;
   z-index: 0;
 }
+
+/* Game animation */
+
 .zoom_out {
   animation-name: zoomOut;
   animation-duration: 3s;
@@ -68,46 +71,7 @@ img {
   }
 }
 
-#timerClock {
-  position: absolute;
-  width: 1.7%;
-  aspect-ratio: 6/30;
-  border: 2px solid black;
-  background-color: rgba(208, 204, 204, 0.383);
-  top: -1.4%;
-  left: 15%;
-  transform: rotate(90deg);
-}
-
-#time_bar_sprite {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: limegreen;
-  transform-origin: center bottom;
-}
-
-.shrink {
-  animation-name: shrink_kf;
-  animation-duration: 60s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-}
-
-@keyframes shrink_kf {
-  0% {
-    scale: 1 1;
-    background-color: limegreen;
-  }
-  50% {
-    background-color: rgb(255, 230, 0);
-  }
-  100% {
-    scale: 1 0;
-    background-color: red;
-  }
-}
+/* Game tilstand */
 
 #startGame {
   font-family: "Rye", cursive;
@@ -216,6 +180,8 @@ img {
   }
 }
 
+/* Game elements */
+
 #game_elements {
   grid-area: 1 / 1;
   position: relative;
@@ -239,7 +205,7 @@ img {
   0% {
     transform: translate(-100%, 5%);
   }
-
+  
   25% {
     transform: translate(200%, 3%);
   }
@@ -247,7 +213,7 @@ img {
   50% {
     transform: translate(-50%, 4%);
   }
-
+  
   75% {
     transform: translate(230%, 4%);
   }
@@ -284,7 +250,7 @@ img {
   75% {
     transform: translate(80%, 5%);
   }
-
+  
   100% {
     transform: translate(-200%, 5%);
   }
@@ -311,15 +277,15 @@ img {
   25% {
     transform: translate(-200%, 5%);
   }
-
+  
   50% {
     transform: translate(50%, 4%);
   }
-
+  
   75% {
     transform: translate(-130%, 5%);
   }
-
+  
   100% {
     transform: translate(120%, 5%);
   }
@@ -342,15 +308,15 @@ img {
   0% {
     transform: translate(-200%, 3%);
   }
-
+  
   25% {
     transform: translate(250%, 3%);
   }
-
+  
   50% {
     transform: translate(-170%, 3%);
   }
-
+  
   75% {
     transform: translate(300%, 3%);
   }
@@ -381,15 +347,15 @@ img {
   25% {
     transform: translate(300%, 1%);
   }
-
+  
   50% {
     transform: translate(-100%, 1%);
   }
-
+  
   75% {
     transform: translate(250%, 1%);
   }
-
+  
   100% {
     transform: translate(-200%, 1%);
   }
@@ -413,15 +379,15 @@ img {
   0% {
     transform: translate(50%, 10%);
   }
-
+  
   25% {
     transform: translate(-100%, 10%);
   }
-
+  
   50% {
     transform: translate(120%, 10%);
   }
-
+  
   75% {
     transform: translate(-150%, 10%);
   }
@@ -430,13 +396,15 @@ img {
   }
 }
 
+
+/* ui-elementer */
+
 #game_ui {
   grid-area: 1 / 1;
   position: relative;
   pointer-events: none;
 }
 
-/* ui-elementer */
 #time_board {
   display: grid;
   width: 4%;
@@ -542,4 +510,45 @@ img {
 
 .paused {
   animation-play-state: paused;
+}
+
+#timerClock {
+  position: absolute;
+  width: 1.7%;
+  aspect-ratio: 6/30;
+  border: 2px solid black;
+  background-color: rgba(208, 204, 204, 0.383);
+  top: -1.4%;
+  left: 15%;
+  transform: rotate(90deg);
+}
+
+#time_bar_sprite {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: limegreen;
+  transform-origin: center bottom;
+}
+
+.shrink {
+  animation-name: shrink_kf;
+  animation-duration: 60s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes shrink_kf {
+  0% {
+    scale: 1 1;
+    background-color: limegreen;
+  }
+  50% {
+    background-color: rgb(255, 230, 0);
+  }
+  100% {
+    scale: 1 0;
+    background-color: red;
+  }
 }

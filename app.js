@@ -246,7 +246,7 @@ function repeatB3() {
   restartB3.addEventListener("mousedown", zoom_Bandit3);
 }
 
-// Game start funktioner
+//--------------------------------------------- Game start funktioner-----------------------------------------------------------//
 
 function game_start() {
   document.querySelector("#game_background").classList.remove("hidden");
@@ -279,7 +279,7 @@ function resetPoint() {
 }
 
 
-// Tilstands funktioner 
+//------------------------------------------------ Tilstands funktioner-----------------------------------------------------------// 
 
 function level_Complete1() {
   stopAnimation();
@@ -308,7 +308,7 @@ function showStartScreen() {
   resetTimer();
 }
 
-// Animation funktioner 
+//-------------------------------------------- Animation funktioner--------------------------------------------------------//
 
 function startAnimation() {
   document.querySelector("#civil_container").classList.add("civil1");
@@ -358,7 +358,7 @@ function startClickEvent() {
   .addEventListener("mousedown", zoom_Bandit3);
 }
 
-// Game ui funktioner 
+//------------------------------------------------ Game UI funktioner-------------------------------------------------------------// 
 
 function time_bar() {
   document.querySelector("#time_bar_sprite").classList.add("shrink");
