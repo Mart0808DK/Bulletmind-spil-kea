@@ -236,16 +236,143 @@ function repeatB3() {
   restartB3.removeEventListener("animationend", repeatB3);
 
   restartB3.querySelector("img").classList.remove("zoom_out");
-
+  
   restartB3.classList.remove("paused");
-
+  
   restartB3.classList.remove("band2");
   restartB3.offsetWidth;
   restartB3.classList.add("band2");
-
+  
   restartB3.addEventListener("mousedown", zoom_Bandit3);
 }
 
+// Game start funktioner
+
+function game_start() {
+  document.querySelector("#game_background").classList.remove("hidden");
+  document.querySelector("#start_g").classList.remove("hidden");
+}
+
+function showGameScreen() {
+  document.querySelector("#start_g").classList.add("hidden");
+  document.querySelector("#game_over").classList.add("hidden");
+  document.querySelector("#level_complete").classList.add("hidden");
+}
+
+
+function resetLives() {
+  lives = 3;
+  
+  document.querySelector("#life_board1").classList.remove("broken_heart");
+  document.querySelector("#life_board2").classList.remove("broken_heart");
+  document.querySelector("#life_board3").classList.remove("broken_heart");
+  
+  document.querySelector("#life_board1").classList.add("life_B");
+  document.querySelector("#life_board2").classList.add("life_B");
+  document.querySelector("#life_board3").classList.add("life_B");
+}
+
+function resetPoint() {
+  points = 0;
+  
+  displayPoints();
+}
+
+
+// Tilstands funktioner 
+
+function level_Complete1() {
+  stopAnimation();
+  document.querySelector("#game_background").classList.remove("hidden");
+  document.querySelector("#level_complete").classList.remove("hidden");
+  document.querySelector("#sound_start_game").pause();
+  document.querySelector("#sound_level_complete").play();
+  resetTimer();
+}
+
+function game_Over1() {
+  stopAnimation();
+  document.querySelector("#game_background").classList.remove("hidden");
+  document.querySelector("#game_over").classList.remove("hidden");
+  document.querySelector("#sound_start_game").pause();
+  document.querySelector("#sound_game_over").play();
+  resetTimer();
+}
+
+
+
+function showStartScreen() {
+  document.querySelector("#start_g").classList.remove("hidden");
+  document.querySelector("#game_over").classList.add("hidden");
+  document.querySelector("#level_complete").classList.add("hidden");
+  resetTimer();
+}
+
+// Animation funktioner 
+
+function startAnimation() {
+  document.querySelector("#civil_container").classList.add("civil1");
+  document.querySelector("#civil_container2").classList.add("civil2");
+  document.querySelector("#civil_container3").classList.add("civil3");
+  document.querySelector("#bandit1_container").classList.add("band1");
+  document.querySelector("#bandit2_container").classList.add("band2");
+  document.querySelector("#bandit3_container").classList.add("band3");
+}
+
+function stopAnimation() {
+  document.querySelector("#civil_container").classList.remove("civil1");
+  document.querySelector("#civil_container").offsetWidth;
+  document.querySelector("#civil_container2").classList.remove("civil2");
+  document.querySelector("#civil_container2").offsetWidth;
+  document.querySelector("#civil_container3").classList.remove("civil3");
+  document.querySelector("#civil_container3").offsetWidth;
+  
+  document.querySelector("#bandit1_container").classList.remove("band1");
+  document.querySelector("#bandit1_container").offsetWidth;
+  document.querySelector("#bandit2_container").classList.remove("band2");
+  document.querySelector("#bandit2_container").offsetWidth;
+  document.querySelector("#bandit3_container").classList.remove("band3");
+  document.querySelector("#bandit3_container").offsetWidth;
+}
+
+
+
+function startClickEvent() {
+  document
+  .querySelector("#civil_container")
+  .addEventListener("mousedown", zoom_Civil1);
+  document
+  .querySelector("#civil_container2")
+  .addEventListener("mousedown", zoom_Civil2);
+  document
+  .querySelector("#civil_container3")
+  .addEventListener("mousedown", zoom_Civil3);
+  document
+  .querySelector("#bandit1_container")
+  .addEventListener("mousedown", zoom_Bandit1);
+  document
+  .querySelector("#bandit2_container")
+  .addEventListener("mousedown", zoom_Bandit2);
+  document
+  .querySelector("#bandit3_container")
+  .addEventListener("mousedown", zoom_Bandit3);
+}
+
+// Game ui funktioner 
+
+function time_bar() {
+  document.querySelector("#time_bar_sprite").classList.add("shrink");
+  document.querySelector("#time_bar_sprite").addEventListener("animationend", startGame);
+}
+
+function timeisUp() {
+  restart_time_bar();
+  if (points == 50) {
+    level_Complete1();
+  } else {
+    game_Over1()
+  }
+}
 function incrementPoints() {
   points = points + 10;
   displayPoints();
@@ -274,125 +401,10 @@ function displayDecrementLives() {
   document.querySelector("#life_board" + lives).classList.add("broken_heart");
 }
 
-function level_Complete1() {
-  stopAnimation();
-  document.querySelector("#game_background").classList.remove("hidden");
-  document.querySelector("#level_complete").classList.remove("hidden");
-  document.querySelector("#sound_start_game").pause();
-  document.querySelector("#sound_level_complete").play();
-  resetTimer();
-}
-
-function game_Over1() {
-  stopAnimation();
-  document.querySelector("#game_background").classList.remove("hidden");
-  document.querySelector("#game_over").classList.remove("hidden");
-  document.querySelector("#sound_start_game").pause();
-  document.querySelector("#sound_game_over").play();
-  resetTimer();
-}
-
-function game_start() {
-  document.querySelector("#game_background").classList.remove("hidden");
-  document.querySelector("#start_g").classList.remove("hidden");
-}
-
-
-function showStartScreen() {
-  document.querySelector("#start_g").classList.remove("hidden");
-  document.querySelector("#game_over").classList.add("hidden");
-  document.querySelector("#level_complete").classList.add("hidden");
-  resetTimer();
-}
-
-function resetLives() {
-  lives = 3;
-
-  document.querySelector("#life_board1").classList.remove("broken_heart");
-  document.querySelector("#life_board2").classList.remove("broken_heart");
-  document.querySelector("#life_board3").classList.remove("broken_heart");
-
-  document.querySelector("#life_board1").classList.add("life_B");
-  document.querySelector("#life_board2").classList.add("life_B");
-  document.querySelector("#life_board3").classList.add("life_B");
-}
-
-function resetPoint() {
-  points = 0;
-
-  displayPoints();
-}
-
-function showGameScreen() {
-  document.querySelector("#start_g").classList.add("hidden");
-  document.querySelector("#game_over").classList.add("hidden");
-  document.querySelector("#level_complete").classList.add("hidden");
-}
-
-function startAnimation() {
-document.querySelector("#civil_container").classList.add("civil1");
-document.querySelector("#civil_container2").classList.add("civil2");
-document.querySelector("#civil_container3").classList.add("civil3");
-document.querySelector("#bandit1_container").classList.add("band1");
-document.querySelector("#bandit2_container").classList.add("band2");
-document.querySelector("#bandit3_container").classList.add("band3");
-}
-
-function stopAnimation() {
-  document.querySelector("#civil_container").classList.remove("civil1");
-  document.querySelector("#civil_container").offsetWidth;
-  document.querySelector("#civil_container2").classList.remove("civil2");
-  document.querySelector("#civil_container2").offsetWidth;
-  document.querySelector("#civil_container3").classList.remove("civil3");
-  document.querySelector("#civil_container3").offsetWidth;
-
-  document.querySelector("#bandit1_container").classList.remove("band1");
-  document.querySelector("#bandit1_container").offsetWidth;
-  document.querySelector("#bandit2_container").classList.remove("band2");
-  document.querySelector("#bandit2_container").offsetWidth;
-  document.querySelector("#bandit3_container").classList.remove("band3");
-  document.querySelector("#bandit3_container").offsetWidth;
-}
-
-function time_bar() {
-  document.querySelector("#time_bar_sprite").classList.add("shrink");
-  document.querySelector("#time_bar_sprite").addEventListener("animationend", startGame);
-}
-
-function timeisUp() {
-  restart_time_bar();
-  if (points == 50) {
-    level_Complete1();
-  } else {
-    game_Over1()
-  }
-}
-
 function resetTimer() {
   document.querySelector("#time_bar_sprite").removeEventListener("animationend", timeisUp);
   document.querySelector("#time_bar_sprite").classList.remove("shrink");
   document.querySelector("#time_bar_sprite").offsetWidth;
   document.querySelector("#time_bar_sprite").classList.add("shrink");
   document.querySelector("#time_bar_sprite").addEventListener("#animationend", timeisUp);
-}
-
-function startClickEvent() {
-document
-  .querySelector("#civil_container")
-  .addEventListener("mousedown", zoom_Civil1);
-document
-  .querySelector("#civil_container2")
-  .addEventListener("mousedown", zoom_Civil2);
-document
-  .querySelector("#civil_container3")
-  .addEventListener("mousedown", zoom_Civil3);
-document
-  .querySelector("#bandit1_container")
-  .addEventListener("mousedown", zoom_Bandit1);
-document
-  .querySelector("#bandit2_container")
-  .addEventListener("mousedown", zoom_Bandit2);
-document
-  .querySelector("#bandit3_container")
-  .addEventListener("mousedown", zoom_Bandit3);
 }
