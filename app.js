@@ -1,12 +1,14 @@
 "use script";
 
-let points = 0;
-let lives = 3;
-
-const countdownEl = document.getElementById("countdown");
 
 window.addEventListener("load", start);
 
+// variabler der viser liv og point i starten 
+let points = 0;
+let lives = 3;
+
+
+// Start skærm funktion 
 function start() {
   console.log("start");
   startBt();
@@ -15,11 +17,13 @@ function start() {
   document.querySelector("#btn_restart").addEventListener("click", startGame);
 }
 
+// Start knap funktion der sætter spillet i gang 
 function startBt() {
   document.querySelector("#start_g").classList.remove("hidden");
   document.querySelector("#startGame").addEventListener("click", startGame);
 }
 
+// funktionen der sætter spillet igang
 function startGame() {
   console.log("startGame");
   document.querySelector("#sound_level_complete").pause();
@@ -37,6 +41,7 @@ function startGame() {
   startClickEvent();
 }
 
+//------------------- funktioner der sætter zoom og pause animation på det gode og det dårlige--------------------------------------//
 function zoom_Civil1() {
   console.log("civil 1 hit");
   document.querySelector("#sound_civil").currentTime = 0;
@@ -243,6 +248,7 @@ function repeatB3() {
 }
 
 //--------------------------------------------- Game start funktioner-----------------------------------------------------------//
+// funktion der viser startskærm efter level-complete
 function showStartScreen() {
   console.log("showStartScreen");
   document.querySelector("#start_g").classList.remove("hidden");
@@ -255,11 +261,7 @@ function showStartScreen() {
   resetTimer();
 }
 
-function game_start() {
-  document.querySelector("#game_background").classList.remove("hidden");
-  document.querySelector("#start_g").classList.remove("hidden");
-}
-
+// funktion der ender transition mellem skærmskift 
 function transitionEnd() {
   console.log("transitionEnd");
   this.classList.remove("transition");
@@ -267,6 +269,7 @@ function transitionEnd() {
   this.classList.add("hidden");
 }
 
+// funktion der viser spilskærm 
 function showGameScreen() {
   console.log("showGameScreen");
 
@@ -277,6 +280,7 @@ function showGameScreen() {
   document.querySelector("#level_complete").classList.add("hidden");
 }
 
+// funktion der nulstiller liv
 function resetLives() {
   lives = 3;
 
@@ -289,12 +293,14 @@ function resetLives() {
   document.querySelector("#life_board3").classList.add("life_B");
 }
 
+// funktion der nultiller points
 function resetPoint() {
   points = 0;
 
   displayPoints();
 }
 
+// funktion der starter click event på alle container i spillet der skal clikkes på 
 function startClickEvent() {
   document.querySelector("#civil_container").addEventListener("mousedown", zoom_Civil1);
   document.querySelector("#civil_container2").addEventListener("mousedown", zoom_Civil2);
@@ -306,6 +312,7 @@ function startClickEvent() {
 
 //------------------------------------------------ Tilstands funktioner-----------------------------------------------------------//
 
+// level_complete funktionen
 function level_Complete1() {
   console.log("Level_complete");
   stopAnimation();
@@ -316,6 +323,7 @@ function level_Complete1() {
   resetTimer();
 }
 
+// game_over funktionen 
 function game_Over1() {
   console.log("Game_over");
   stopAnimation();
@@ -328,6 +336,7 @@ function game_Over1() {
 
 //-------------------------------------------- Animation funktioner--------------------------------------------------------//
 
+// starter animation til spillet 
 function startAnimation() {
   document.querySelector("#civil_container").classList.add("civil1");
   document.querySelector("#civil_container2").classList.add("civil2");
@@ -337,6 +346,7 @@ function startAnimation() {
   document.querySelector("#bandit3_container").classList.add("band3");
 }
 
+// stopper animation når spillet er slut eller gennemført 
 function stopAnimation() {
   document.querySelector("#civil_container").classList.remove("civil1");
   document.querySelector("#civil_container").offsetWidth;
@@ -355,6 +365,7 @@ function stopAnimation() {
 
 //------------------------------------------------ Game UI funktioner-------------------------------------------------------------//
 
+// Viser time bar i øverste ventre hjørne 
 function time_bar() {
   document.querySelector("#time_bar_sprite").classList.add("shrink");
   document.querySelector("#time_bar_sprite").addEventListener("animationend", startGame);
@@ -362,6 +373,7 @@ function time_bar() {
   
 }
 
+// funktion der afgør hvad der sker når tiden løber ud
 function timeisUp() {
   if (points == 100) {
     level_Complete1();
@@ -369,6 +381,8 @@ function timeisUp() {
     game_Over1();
   }
 }
+
+// funktion der afgør hvor mange points man får at clikker på en god ting og når der er level-complete
 function incrementPoints() {
   points = points + 10;
   displayPoints();
@@ -377,12 +391,14 @@ function incrementPoints() {
   }
 }
 
+// funktion der viser points
 function displayPoints() {
   document.querySelector("#score_countGO").textContent = points;
   document.querySelector("#score_count").textContent = points;
   document.querySelector("#score_countGO2").textContent = points;
 }
 
+// funktion der viser når man rammer en dårlig ting 
 function decrementPoints() {
   console.log("hello");
   if (lives <= 1) {
@@ -392,11 +408,13 @@ function decrementPoints() {
   lives--;
 }
 
+// funktion der viser at hjerte går fra rødt til gråt når man rammer en dårlig ting 
 function displayDecrementLives() {
   document.querySelector("#life_board" + lives).classList.remove("life_B");
   document.querySelector("#life_board" + lives).classList.add("broken_heart");
 }
 
+// funktion der nulstiller timeren 
 function resetTimer() {
   document.querySelector("#time_bar_sprite").removeEventListener("animationend", timeisUp);
   document.querySelector("#time_bar_sprite").classList.remove("shrink");
