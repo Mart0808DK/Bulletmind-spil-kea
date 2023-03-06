@@ -11,9 +11,7 @@ function start() {
   console.log("start");
   startBt();
   document.querySelector("#sound_level_complete").pause();
-  document
-    .querySelector("#btn_go_to_start")
-    .addEventListener("click", showStartScreen);
+  document.querySelector("#btn_go_to_start").addEventListener("click", showStartScreen);
   document.querySelector("#btn_restart").addEventListener("click", startGame);
 }
 
@@ -246,9 +244,15 @@ function repeatB3() {
 
 //--------------------------------------------- Game start funktioner-----------------------------------------------------------//
 function showStartScreen() {
-  document.querySelector("#start_g").classList.remove("hidden");  
+  console.log("hello world asd");
+  document.querySelector("#start_g").classList.remove("hidden");
   document.querySelector("#game_over").classList.add("hidden");
-  document.querySelector("#level_complete").classList.add("hidden");
+  //document.querySelector("#level_complete").classList.add("hidden");
+  document.querySelector("#game").classList.add("hidden");
+
+  document.querySelector("#level_complete").classList.add("transition");
+  document.querySelector("#level_complete").addEventListener("animationend", transitionEnd);
+
   resetTimer();
 }
 
@@ -257,8 +261,19 @@ function game_start() {
   document.querySelector("#start_g").classList.remove("hidden");
 }
 
+function transitionEnd() {
+  console.log("transitionEnd");
+  this.classList.remove("transition");
+  this.offsetWidth;
+  this.classList.add("hidden");
+}
+
 function showGameScreen() {
+  console.log("showGameScreen");
+
   document.querySelector("#start_g").classList.add("transition");
+  document.querySelector("#start_g").addEventListener("animationend", transitionEnd);
+
   document.querySelector("#game_over").classList.add("hidden");
   document.querySelector("#level_complete").classList.add("hidden");
 }
@@ -282,24 +297,12 @@ function resetPoint() {
 }
 
 function startClickEvent() {
-  document
-    .querySelector("#civil_container")
-    .addEventListener("mousedown", zoom_Civil1);
-  document
-    .querySelector("#civil_container2")
-    .addEventListener("mousedown", zoom_Civil2);
-  document
-    .querySelector("#civil_container3")
-    .addEventListener("mousedown", zoom_Civil3);
-  document
-    .querySelector("#bandit1_container")
-    .addEventListener("mousedown", zoom_Bandit1);
-  document
-    .querySelector("#bandit2_container")
-    .addEventListener("mousedown", zoom_Bandit2);
-  document
-    .querySelector("#bandit3_container")
-    .addEventListener("mousedown", zoom_Bandit3);
+  document.querySelector("#civil_container").addEventListener("mousedown", zoom_Civil1);
+  document.querySelector("#civil_container2").addEventListener("mousedown", zoom_Civil2);
+  document.querySelector("#civil_container3").addEventListener("mousedown", zoom_Civil3);
+  document.querySelector("#bandit1_container").addEventListener("mousedown", zoom_Bandit1);
+  document.querySelector("#bandit2_container").addEventListener("mousedown", zoom_Bandit2);
+  document.querySelector("#bandit3_container").addEventListener("mousedown", zoom_Bandit3);
 }
 
 //------------------------------------------------ Tilstands funktioner-----------------------------------------------------------//
@@ -355,9 +358,7 @@ function stopAnimation() {
 
 function time_bar() {
   document.querySelector("#time_bar_sprite").classList.add("shrink");
-  document
-    .querySelector("#time_bar_sprite")
-    .addEventListener("animationend", startGame);
+  document.querySelector("#time_bar_sprite").addEventListener("animationend", startGame);
 }
 
 function timeisUp() {
@@ -371,7 +372,7 @@ function timeisUp() {
 function incrementPoints() {
   points = points + 10;
   displayPoints();
-  if (points == 100) {
+  if (points == 10) {
     level_Complete1();
   }
 }
@@ -397,13 +398,9 @@ function displayDecrementLives() {
 }
 
 function resetTimer() {
-  document
-    .querySelector("#time_bar_sprite")
-    .removeEventListener("animationend", timeisUp);
+  document.querySelector("#time_bar_sprite").removeEventListener("animationend", timeisUp);
   document.querySelector("#time_bar_sprite").classList.remove("shrink");
   document.querySelector("#time_bar_sprite").offsetWidth;
   document.querySelector("#time_bar_sprite").classList.add("shrink");
-  document
-    .querySelector("#time_bar_sprite")
-    .addEventListener("#animationend", timeisUp);
+  document.querySelector("#time_bar_sprite").addEventListener("#animationend", timeisUp);
 }
