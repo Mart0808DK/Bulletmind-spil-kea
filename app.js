@@ -8,7 +8,7 @@ const countdownEl = document.getElementById("countdown");
 
 window.addEventListener("load", start);
 
-function start() {
+  function start() {
   console.log("start");
   startBt();
   document.querySelector("#sound_level_complete").pause();
@@ -217,24 +217,24 @@ function zoom_Bandit3() {
   document.querySelector("#sound_bandit_gun").currentTime = 0;
   document.querySelector("#sound_bandit_gun").play();
   let ban3 = document.querySelector("#bandit3_container");
-
+  
   ban3.removeEventListener("mousedown", zoom_Bandit3);
-
+  
   ban3.classList.add("paused");
-
+  
   ban3.querySelector("img").classList.add("zoom_out");
-
+  
   ban3.addEventListener("animationend", repeatB3);
-
+  
   incrementPoints();
 }
 
 function repeatB3() {
   console.log("restart bandit 3");
   let restartB3 = document.querySelector("#bandit3_container");
-
+  
   restartB3.removeEventListener("animationend", repeatB3);
-
+  
   restartB3.querySelector("img").classList.remove("zoom_out");
   
   restartB3.classList.remove("paused");
@@ -247,11 +247,19 @@ function repeatB3() {
 }
 
 //--------------------------------------------- Game start funktioner-----------------------------------------------------------//
+function showStartScreen() {
+  document.querySelector("#start_g").classList.remove("hidden");
+  document.querySelector("#game_over").classList.add("hidden");
+  document.querySelector("#level_complete").classList.add("hidden");
+  resetTimer();
+}
 
 function game_start() {
   document.querySelector("#game_background").classList.remove("hidden");
   document.querySelector("#start_g").classList.remove("hidden");
 }
+
+
 
 function showGameScreen() {
   document.querySelector("#start_g").classList.add("hidden");
@@ -278,6 +286,26 @@ function resetPoint() {
   displayPoints();
 }
 
+function startClickEvent() {
+  document
+  .querySelector("#civil_container")
+  .addEventListener("mousedown", zoom_Civil1);
+  document
+  .querySelector("#civil_container2")
+  .addEventListener("mousedown", zoom_Civil2);
+  document
+  .querySelector("#civil_container3")
+  .addEventListener("mousedown", zoom_Civil3);
+  document
+  .querySelector("#bandit1_container")
+  .addEventListener("mousedown", zoom_Bandit1);
+  document
+  .querySelector("#bandit2_container")
+  .addEventListener("mousedown", zoom_Bandit2);
+  document
+  .querySelector("#bandit3_container")
+  .addEventListener("mousedown", zoom_Bandit3);
+}
 
 //------------------------------------------------ Tilstands funktioner-----------------------------------------------------------// 
 
@@ -301,12 +329,6 @@ function game_Over1() {
 
 
 
-function showStartScreen() {
-  document.querySelector("#start_g").classList.remove("hidden");
-  document.querySelector("#game_over").classList.add("hidden");
-  document.querySelector("#level_complete").classList.add("hidden");
-  resetTimer();
-}
 
 //-------------------------------------------- Animation funktioner--------------------------------------------------------//
 
@@ -337,26 +359,6 @@ function stopAnimation() {
 
 
 
-function startClickEvent() {
-  document
-  .querySelector("#civil_container")
-  .addEventListener("mousedown", zoom_Civil1);
-  document
-  .querySelector("#civil_container2")
-  .addEventListener("mousedown", zoom_Civil2);
-  document
-  .querySelector("#civil_container3")
-  .addEventListener("mousedown", zoom_Civil3);
-  document
-  .querySelector("#bandit1_container")
-  .addEventListener("mousedown", zoom_Bandit1);
-  document
-  .querySelector("#bandit2_container")
-  .addEventListener("mousedown", zoom_Bandit2);
-  document
-  .querySelector("#bandit3_container")
-  .addEventListener("mousedown", zoom_Bandit3);
-}
 
 //------------------------------------------------ Game UI funktioner-------------------------------------------------------------// 
 
