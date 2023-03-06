@@ -244,10 +244,9 @@ function repeatB3() {
 
 //--------------------------------------------- Game start funktioner-----------------------------------------------------------//
 function showStartScreen() {
-  console.log("hello world asd");
+  console.log("showStartScreen");
   document.querySelector("#start_g").classList.remove("hidden");
   document.querySelector("#game_over").classList.add("hidden");
-  //document.querySelector("#level_complete").classList.add("hidden");
   document.querySelector("#game").classList.add("hidden");
 
   document.querySelector("#level_complete").classList.add("transition");
@@ -359,11 +358,12 @@ function stopAnimation() {
 function time_bar() {
   document.querySelector("#time_bar_sprite").classList.add("shrink");
   document.querySelector("#time_bar_sprite").addEventListener("animationend", startGame);
+  document.querySelector("#time_bar_sprite").addEventListener("animationend", timeisUp);
+  
 }
 
 function timeisUp() {
-  restart_time_bar();
-  if (points == 50) {
+  if (points == 100) {
     level_Complete1();
   } else {
     game_Over1();
@@ -372,7 +372,7 @@ function timeisUp() {
 function incrementPoints() {
   points = points + 10;
   displayPoints();
-  if (points == 10) {
+  if (points == 100) {
     level_Complete1();
   }
 }
