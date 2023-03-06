@@ -1,14 +1,12 @@
 "use script";
 
-
 window.addEventListener("load", start);
 
-// variabler der viser liv og point i starten 
+// variabler der viser liv og point i starten
 let points = 0;
 let lives = 3;
 
-
-// Start skærm funktion 
+// Start skærm funktion
 function start() {
   console.log("start");
   startBt();
@@ -17,7 +15,7 @@ function start() {
   document.querySelector("#btn_restart").addEventListener("click", startGame);
 }
 
-// Start knap funktion der sætter spillet i gang 
+// Start knap funktion der sætter spillet i gang
 function startBt() {
   document.querySelector("#start_g").classList.remove("hidden");
   document.querySelector("#startGame").addEventListener("click", startGame);
@@ -41,7 +39,7 @@ function startGame() {
   startClickEvent();
 }
 
-//------------------- funktioner der sætter zoom og pause animation på det gode og det dårlige--------------------------------------//
+//----- ------------------------funktioner der sætter zoom og pause animation på det gode og det dårlige----- ---------------------//
 function zoom_Civil1() {
   console.log("civil 1 hit");
   document.querySelector("#sound_civil").currentTime = 0;
@@ -59,6 +57,7 @@ function zoom_Civil1() {
   decrementPoints();
 }
 
+// genstarter civil 1 funktion
 function repeatC1() {
   console.log("restart civil1");
   let restartC1 = document.querySelector("#civil_container");
@@ -93,6 +92,7 @@ function zoom_Civil2() {
   decrementPoints();
 }
 
+// genstarter civil 2 funktion
 function repeatC2() {
   console.log("restart civil2");
   let restartC2 = document.querySelector("#civil_container2");
@@ -127,6 +127,7 @@ function zoom_Civil3() {
   decrementPoints();
 }
 
+// genstarter civil 3 funktion
 function repeatC3() {
   console.log("restart civil 3");
   let restartC3 = document.querySelector("#civil_container3");
@@ -162,6 +163,7 @@ function zoom_Bandit1() {
   incrementPoints();
 }
 
+// genstart bandit1 funktion
 function repeatB1() {
   console.log("restart bandit1");
   let restartB1 = document.querySelector("#bandit1_container");
@@ -196,6 +198,7 @@ function zoom_Bandit2() {
   incrementPoints();
 }
 
+// genstart bandit2 funktion
 function repeatB2() {
   console.log("restart bandit 2");
   let restartB2 = document.querySelector("#bandit2_container");
@@ -230,6 +233,7 @@ function zoom_Bandit3() {
   incrementPoints();
 }
 
+// genstart bandit3 funktion
 function repeatB3() {
   console.log("restart bandit 3");
   let restartB3 = document.querySelector("#bandit3_container");
@@ -261,7 +265,7 @@ function showStartScreen() {
   resetTimer();
 }
 
-// funktion der ender transition mellem skærmskift 
+// funktion der ender transition mellem skærmskift
 function transitionEnd() {
   console.log("transitionEnd");
   this.classList.remove("transition");
@@ -269,7 +273,7 @@ function transitionEnd() {
   this.classList.add("hidden");
 }
 
-// funktion der viser spilskærm 
+// funktion der viser spilskærm
 function showGameScreen() {
   console.log("showGameScreen");
 
@@ -300,7 +304,7 @@ function resetPoint() {
   displayPoints();
 }
 
-// funktion der starter click event på alle container i spillet der skal clikkes på 
+// funktion der starter click event på alle container i spillet der skal clikkes på
 function startClickEvent() {
   document.querySelector("#civil_container").addEventListener("mousedown", zoom_Civil1);
   document.querySelector("#civil_container2").addEventListener("mousedown", zoom_Civil2);
@@ -323,7 +327,7 @@ function level_Complete1() {
   resetTimer();
 }
 
-// game_over funktionen 
+// game_over funktionen
 function game_Over1() {
   console.log("Game_over");
   stopAnimation();
@@ -336,7 +340,7 @@ function game_Over1() {
 
 //-------------------------------------------- Animation funktioner--------------------------------------------------------//
 
-// starter animation til spillet 
+// starter animation til spillet
 function startAnimation() {
   document.querySelector("#civil_container").classList.add("civil1");
   document.querySelector("#civil_container2").classList.add("civil2");
@@ -346,7 +350,7 @@ function startAnimation() {
   document.querySelector("#bandit3_container").classList.add("band3");
 }
 
-// stopper animation når spillet er slut eller gennemført 
+// stopper animation når spillet er slut eller gennemført
 function stopAnimation() {
   document.querySelector("#civil_container").classList.remove("civil1");
   document.querySelector("#civil_container").offsetWidth;
@@ -365,12 +369,11 @@ function stopAnimation() {
 
 //------------------------------------------------ Game UI funktioner-------------------------------------------------------------//
 
-// Viser time bar i øverste ventre hjørne 
+// Viser time bar i øverste ventre hjørne
 function time_bar() {
   document.querySelector("#time_bar_sprite").classList.add("shrink");
   document.querySelector("#time_bar_sprite").addEventListener("animationend", startGame);
   document.querySelector("#time_bar_sprite").addEventListener("animationend", timeisUp);
-  
 }
 
 // funktion der afgør hvad der sker når tiden løber ud
@@ -398,7 +401,7 @@ function displayPoints() {
   document.querySelector("#score_countGO2").textContent = points;
 }
 
-// funktion der viser når man rammer en dårlig ting 
+// funktion der viser når man rammer en dårlig ting
 function decrementPoints() {
   console.log("hello");
   if (lives <= 1) {
@@ -408,13 +411,13 @@ function decrementPoints() {
   lives--;
 }
 
-// funktion der viser at hjerte går fra rødt til gråt når man rammer en dårlig ting 
+// funktion der viser at hjerte går fra rødt til gråt når man rammer en dårlig ting
 function displayDecrementLives() {
   document.querySelector("#life_board" + lives).classList.remove("life_B");
   document.querySelector("#life_board" + lives).classList.add("broken_heart");
 }
 
-// funktion der nulstiller timeren 
+// funktion der nulstiller timeren
 function resetTimer() {
   document.querySelector("#time_bar_sprite").removeEventListener("animationend", timeisUp);
   document.querySelector("#time_bar_sprite").classList.remove("shrink");
