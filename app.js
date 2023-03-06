@@ -10,7 +10,6 @@ let lives = 3;
 function start() {
   console.log("start");
   startBt();
-  document.querySelector("#sound_level_complete").pause();
   document.querySelector("#btn_go_to_start").addEventListener("click", showStartScreen);
   document.querySelector("#btn_restart").addEventListener("click", startGame);
 }
@@ -255,6 +254,7 @@ function repeatB3() {
 // funktion der viser startskærm efter level-complete
 function showStartScreen() {
   console.log("showStartScreen");
+  document.querySelector("#sound_level_complete").pause();
   document.querySelector("#start_g").classList.remove("hidden");
   document.querySelector("#game_over").classList.add("hidden");
   document.querySelector("#game").classList.add("hidden");
