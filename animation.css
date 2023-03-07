@@ -29,7 +29,7 @@ img {
 
 #game_background {
   grid-area: 1 / 1;
-  background-image: url(/images/Background-night-1280x720.jpg);
+  background-image: url(/images/Background-night-1280x720.png);
   background-size: cover;
   aspect-ratio: 16/9;
   width: 100%;
@@ -104,7 +104,7 @@ img {
   position: absolute;
   display: grid;
   grid-area: 1/1;
-  background-image: url(/images/Game-start5-1280x720.jpg);
+  background-image: url(/images/Game-start5-1280x720.png);
   background-size: cover;
   aspect-ratio: 16/9;
   width: 100%;
@@ -113,7 +113,7 @@ img {
 
 #game_over {
   grid-area: 1/1;
-  background-image: url(/images/Game-over2-1280x720.jpg);
+  background-image: url(/images/Game-over2-1280x720.png);
   background-size: cover;
   aspect-ratio: 16/9;
   width: 100%;
@@ -149,7 +149,7 @@ img {
 
 #level_complete {
   grid-area: 1/1;
-  background-image: url(/images/Level-complete2-1280x720.jpg);
+  background-image: url(/images/Level-complete2-1280x720.png);
   background-size: cover;
   aspect-ratio: 16/9;
   width: 100%;
