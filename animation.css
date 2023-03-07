@@ -2,6 +2,7 @@ body {
   margin: 0;
   width: 100%;
   cursor: crosshair;
+  user-select: none;
 }
 
 img {
@@ -204,7 +205,7 @@ img {
   0% {
     transform: translate(-100%, 5%);
   }
-  
+
   25% {
     transform: translate(200%, 3%);
   }
@@ -212,7 +213,7 @@ img {
   50% {
     transform: translate(-50%, 4%);
   }
-  
+
   75% {
     transform: translate(230%, 4%);
   }
@@ -249,7 +250,7 @@ img {
   75% {
     transform: translate(80%, 5%);
   }
-  
+
   100% {
     transform: translate(-200%, 5%);
   }
@@ -276,15 +277,15 @@ img {
   25% {
     transform: translate(-200%, 5%);
   }
-  
+
   50% {
     transform: translate(50%, 4%);
   }
-  
+
   75% {
     transform: translate(-130%, 5%);
   }
-  
+
   100% {
     transform: translate(120%, 5%);
   }
@@ -307,15 +308,15 @@ img {
   0% {
     transform: translate(-200%, 3%);
   }
-  
+
   25% {
     transform: translate(250%, 3%);
   }
-  
+
   50% {
     transform: translate(-170%, 3%);
   }
-  
+
   75% {
     transform: translate(300%, 3%);
   }
@@ -346,15 +347,15 @@ img {
   25% {
     transform: translate(300%, 1%);
   }
-  
+
   50% {
     transform: translate(-100%, 1%);
   }
-  
+
   75% {
     transform: translate(250%, 1%);
   }
-  
+
   100% {
     transform: translate(-200%, 1%);
   }
@@ -378,15 +379,15 @@ img {
   0% {
     transform: translate(50%, 10%);
   }
-  
+
   25% {
     transform: translate(-100%, 10%);
   }
-  
+
   50% {
     transform: translate(120%, 10%);
   }
-  
+
   75% {
     transform: translate(-150%, 10%);
   }
@@ -394,7 +395,6 @@ img {
     transform: translate(-500%, 10%);
   }
 }
-
 
 /* ui-elementer */
 
@@ -551,4 +551,3 @@ img {
     background-color: red;
   }
 }
-
