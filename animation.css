@@ -29,7 +29,7 @@ img {
 
 #game_background {
   grid-area: 1 / 1;
-  background-image: url(/images/Background-night-1280x720.png);
+  background-image: url(images/Background-night-1280x720.png);
   background-size: cover;
   aspect-ratio: 16/9;
   width: 100%;
