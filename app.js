@@ -257,27 +257,18 @@ function showStartScreen() {
   document.querySelector("#sound_level_complete").pause();
   document.querySelector("#start_g").classList.remove("hidden");
   document.querySelector("#game_over").classList.add("hidden");
-  document.querySelector("#game").classList.add("hidden");
-
-  document.querySelector("#level_complete").classList.add("transition");
-  document.querySelector("#level_complete").addEventListener("animationend", transitionEnd);
+  //document.querySelector("#game").classList.add("hidden");
+  console.log("I've added hidden");
+  document.querySelector("#level_complete").classList.add("hidden");
 
   resetTimer();
 }
 
-// funktion der ender transition mellem skærmskift
-function transitionEnd() {
-  console.log("transitionEnd");
-  this.classList.remove("transition");
-  this.offsetWidth;
-  this.classList.add("hidden");
-}
 
 // funktion der viser spilskærm
 function showGameScreen() {
   console.log("showGameScreen");
-
-  document.querySelector("#start_g").classList.add("transition");
+  document.querySelector("#start_g").classList.add("hidden");
   document.querySelector("#start_g").addEventListener("animationend", transitionEnd);
 
   document.querySelector("#game_over").classList.add("hidden");
@@ -320,7 +311,6 @@ function startClickEvent() {
 function level_Complete1() {
   console.log("Level_complete");
   stopAnimation();
-  document.querySelector("#game_background").classList.remove("hidden");
   document.querySelector("#level_complete").classList.remove("hidden");
   document.querySelector("#sound_start_game").pause();
   document.querySelector("#sound_level_complete").play();
@@ -331,7 +321,7 @@ function level_Complete1() {
 function game_Over1() {
   console.log("Game_over");
   stopAnimation();
-  document.querySelector("#game_background").classList.remove("hidden");
+  document.querySelector("#game_over").classList.remove("hidden");
   document.querySelector("#game_over").classList.remove("hidden");
   document.querySelector("#sound_start_game").pause();
   document.querySelector("#sound_game_over").play();
