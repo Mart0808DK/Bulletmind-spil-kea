@@ -269,7 +269,6 @@ function showStartScreen() {
 function showGameScreen() {
   console.log("showGameScreen");
   document.querySelector("#start_g").classList.add("hidden");
-  document.querySelector("#start_g").addEventListener("animationend", transitionEnd);
 
   document.querySelector("#game_over").classList.add("hidden");
   document.querySelector("#level_complete").classList.add("hidden");
